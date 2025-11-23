@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSynth Weapon Database</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 OpenSynth Arsenal</h1>
+            <p class="subtitle">Corporate Arms Encyclopedia • Year 2950</p>
+        </header>
+
+        <div class="controls">
+            <div class="filter-group">
+                <label for="manufacturerFilter">
+                    <span class="label-icon">🏢</span> Manufacturer
+                </label>
+                <select id="manufacturerFilter">
+                    <option value="all">All Manufacturers</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="categoryFilter">
+                    <span class="label-icon">⚔️</span> Category
+                </label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="sortBy">
+                    <span class="label-icon">📊</span> Sort By
+                </label>
+                <select id="sortBy">
+                    <option value="id">ID</option>
+                    <option value="name">Name</option>
+                    <option value="year">Year (Newest First)</option>
+                    <option value="year-asc">Year (Oldest First)</option>
+                    <option value="damage">Damage</option>
+                    <option value="range">Range</option>
+                    <option value="manufacturer">Manufacturer</option>
+                    <option value="category">Category</option>
+                </select>
+            </div>
+
+            <div class="filter-group search-group">
+                <label for="searchBox">
+                    <span class="label-icon">🔍</span> Search
+                </label>
+                <input type="text" id="searchBox" placeholder="Search weapons...">
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-label">Total Weapons:</span>
+                <span class="stat-value" id="totalCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Displayed:</span>
+                <span class="stat-value" id="displayedCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Categories:</span>
+                <span class="stat-value" id="categoryCount">0</span>
+            </div>
+        </div>
+
+        <div id="weaponGrid" class="weapon-grid"></div>
+
+        <div id="modalOverlay" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal()">✕</button>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+ammoTypes:
+  - id: Ammo.None
+    displayName: None
+    description: This item requires or consumes no ammo.
+    category: Concept
+    tags: [default, common]
+    stats:
+      penetration: 0
+      ricochetChance: 0
+  - id: Ammo.LightBallistic
+    displayName: Light Ballistic
+    description: Standard handgun and SMG ammunition used by most security forces.
+    category: Ballistic
+    tags: [common, lowAP]
+    stats:
+      penetration: 1
+      ricochetChance: 0.05
+  - id: Ammo.MediumBallistic
+    displayName: Medium Ballistic
+    description: Intermediate rifle ammunition suitable for carbines and assault rifles.
+    category: Ballistic
+    tags: [standard, midAP]
+    stats:
+      penetration: 2
+      ricochetChance: 0.02
+  - id: Ammo.HeavyBallistic
+    displayName: Heavy Ballistic
+    description: High-caliber rounds for LMGs, battle rifles, and sniper systems.
+    category: Ballistic
+    tags: [highAP, longRange]
+    stats:
+      penetration: 4
+      stagger: 1.5
+      ricochetChance: 0.01
+  - id: Ammo.Shell
+    displayName: Shotgun Shell
+    description: Buckshot, slug, or special-purpose shotgun rounds.
+    category: Shotgun
+    tags: [spread, closeRange]
+    stats:
+      spreadAngle: 35
+      penetration: 0
+  - id: Ammo.MicroMissile
+    displayName: Micro Missile
+    description: Lightweight guided explosive designed to track soft targets.
+    category: Explosive
+    tags: [guided, antiPersonnel]
+    stats:
+      blastRadius: 2.5
+      penetration: 3
+      guidanceStrength: 0.6
+  - id: Ammo.Rocket
+    displayName: Rocket
+    description: High-yield unguided anti-vehicle/anti-structure munition.
+    category: Explosive
+    tags: [dumbfire, antiVehicle]
+    stats:
+      blastRadius: 5
+      penetration: 6
+      backblast: 1
+  - id: Ammo.EnergyCell
+    displayName: Energy Cell
+    description: Power cells used for laser, coil, and directed-energy weapons.
+    category: Energy
+    tags: [energy, beam, precision]
+    stats:
+      heatDamage: 8
+      armorBypass: 2
+  - id: Ammo.Fuel
+    displayName: Incendiary Fuel
+    description: Pressurized ignition fuel used for flamethrowers and flare weapons.
+    category: Chemical
+    tags: [fire, areaDenial]
+    stats:
+      burnDPS: 4
+      spreadRate: 1.5
+  - id: Ammo.Dart
+    displayName: Injector Dart
+    description: Chemical darts for medguns, taser pistols, and non-lethal equipment.
+    category: Chemical
+    tags: [nonLethal, taser, healing]
+    stats:
+      shockDamage: 2
+      healingAmount: 10
+  - id: Ammo.EMP
+    displayName: EMP Charge
+    description: Electromagnetic pulse rounds for disabling drones, turrets, and augmentations.
+    category: Electronic
+    tags: [emp, antiElectronic]
+    stats:
+      empStrength: 7
+      disruptTime: 4

@@ -1,0 +1,979 @@
+{
+  "weapons": [
+    {
+      "id": 1001,
+      "name": "Vektor-9 Magistrate",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.LightBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1002,
+      "name": "AR-99 TaseLine",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.Dart",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1003,
+      "name": "Civic Lance",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1004,
+      "name": "Gavel Purger",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.LightBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1005,
+      "name": "Inquest-7",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1006,
+      "name": "Black Sun",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1007,
+      "name": "Houndjaw",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.LightBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1008,
+      "name": "Reaver's Coil",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.MediumBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1009,
+      "name": "Spinal Tap",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1010,
+      "name": "Ledger Taggun",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.Dart",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1011,
+      "name": "Tallyhook",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.MediumBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1012,
+      "name": "Charon Rig",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.HeavyBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1013,
+      "name": "Gleamfang",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.LightBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1014,
+      "name": "Tremorgut",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.Fuel",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1015,
+      "name": "Choir Maw",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.Fuel",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1016,
+      "name": "Graftline",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.Dart",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1017,
+      "name": "SpliceCaster",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.Fuel",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1018,
+      "name": "Menagerie Pod",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.MicroMissile",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1019,
+      "name": "TruLight",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1020,
+      "name": "Wardnet",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1021,
+      "name": "Aegis Halo",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1022,
+      "name": "Matchstick",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.LightBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1023,
+      "name": "Grail-31",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.MediumBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1024,
+      "name": "Mesh Uplink",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EMP",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1025,
+      "name": "Drifter",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.LightBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1026,
+      "name": "Roadbreaker",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.MediumBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1027,
+      "name": "Wartrain Pod",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.MicroMissile",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1028,
+      "name": "Deposition",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.LightBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1029,
+      "name": "Angleshot",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.MediumBallistic",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1030,
+      "name": "Edit Drone",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1031,
+      "name": "Chorus Seed",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1032,
+      "name": "Cantor Array",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1033,
+      "name": "Seraph Loom",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1034,
+      "name": "Determinant",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1035,
+      "name": "Vectorline",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1036,
+      "name": "Overcast Pulse",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EMP",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1037,
+      "name": "Temperance",
+      "category": "Pistol",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 5,
+        "armorPenetration": 1,
+        "range": 25,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4,
+        "ammoType": "Ammo.EMP",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1038,
+      "name": "Oathline",
+      "category": "Rifle",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 35,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 60,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 3,
+        "ammoType": "Ammo.EnergyCell",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 1039,
+      "name": "Blackwall Pillar",
+      "category": "Heavy",
+      "description": "",
+      "manufacturer": "Syndicate Arms",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 5,
+        "armorPenetration": 6,
+        "range": 120,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 0.5,
+        "ammoType": "Ammo.EMP",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    }
+  ]
+}

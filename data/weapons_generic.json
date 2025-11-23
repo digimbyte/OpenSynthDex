@@ -1,0 +1,2092 @@
+{
+  "weapons": [
+    {
+      "id": 1,
+      "name": "Arcline Shock Baton",
+      "category": "Melee",
+      "description": "Standard corporate shock baton delivering a regulated incapacitation charge. Used in arrests, compliance drills, and untelevised negotiations.",
+      "manufacturer": "Arcline Compliance",
+      "yearOfManufacture": 2720,
+      "stats": {
+        "baseDamage": 18,
+        "critChance": 5,
+        "armorPenetration": 2,
+        "range": 2,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.6,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 6,
+        "aoeDuration": 2.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "apply_status(target, \"stunned\", 1.5);",
+        "onCrit": "",
+        "passive": "mark_as_non_lethal(); prefer_for_role(\"security\");"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Riotweave Flex-Taser",
+      "category": "Melee",
+      "description": "Conductive polymer whip that arcs electricity across multiple bodies in tight formations.",
+      "manufacturer": "Riotweave Solutions",
+      "yearOfManufacture": 2778,
+      "stats": {
+        "baseDamage": 14,
+        "critChance": 6,
+        "armorPenetration": 1,
+        "range": 3,
+        "projectileSpeed": 0,
+        "explosionRadius": 2,
+        "fireRate": 1.9,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 4,
+        "aoeDuration": 2.5
+      },
+      "scripts": {
+        "onFire": "spawn_arc_field(2);",
+        "onHit": "chain_to_nearby_enemies(2);",
+        "onCrit": "",
+        "passive": "prefer_for_mission_tag(\"riot_control\");"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sentinel Breach Hammer",
+      "category": "Melee",
+      "description": "Compact breaching hammer used for forced entry and immediate obedience correction.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2734,
+      "stats": {
+        "baseDamage": 42,
+        "critChance": 3,
+        "armorPenetration": 10,
+        "range": 2,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 0.9,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.is_door or target.is_wall then apply_cover_break(1.0); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"breacher\");"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Ironstar Duty Knife",
+      "category": "Melee",
+      "description": "Full-tang survival knife issued to enforcers. Reliable, unglamorous, and lethal in cramped hallways.",
+      "manufacturer": "Ironstar Forge",
+      "yearOfManufacture": 2704,
+      "stats": {
+        "baseDamage": 22,
+        "critChance": 12,
+        "armorPenetration": 4,
+        "range": 1,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.8,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0.0
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "apply_bleed(target, 4, 4.0);",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 5,
+      "name": "Ghostline Conceal-Dagger",
+      "category": "Melee",
+      "description": "Ceramic stealth dagger invisible to most metal detectors and cheap scanners.",
+      "manufacturer": "Ghostline Labs",
+      "yearOfManufacture": 2891,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 22,
+        "armorPenetration": 2,
+        "range": 1,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.7,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.is_unaware then apply_bonus_damage(0.4); end;",
+        "onCrit": "",
+        "passive": "prefer_for_mission_tag(\"stealth\"); mark_as_non_metallic();"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Helios Arc-Cutter",
+      "category": "Melee",
+      "description": "Industrial plasma cutter repurposed for close-quarters disassembly of armored hostiles.",
+      "manufacturer": "Helios Corp",
+      "yearOfManufacture": 2912,
+      "stats": {
+        "baseDamage": 48,
+        "critChance": 10,
+        "armorPenetration": 16,
+        "range": 1.5,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.0,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 8,
+        "aoeDuration": 2.0
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "emit_small_flame();",
+        "onHit": "apply_armor_melt(target, 3);",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 7,
+      "name": "Cascade Shock-Cleaver",
+      "category": "Melee",
+      "description": "Weighted cleaver with integrated stun nodes for riot suppression and aggressive compliance.",
+      "manufacturer": "Cascade Arsenal",
+      "yearOfManufacture": 2820,
+      "stats": {
+        "baseDamage": 32,
+        "critChance": 8,
+        "armorPenetration": 6,
+        "range": 2,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.2,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 3,
+        "aoeDuration": 1.2
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if mission_tagged(\"riot\") then apply_status(target, \"stunned\", 1.0); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 8,
+      "name": "Voltline Phase-Edge",
+      "category": "Melee",
+      "description": "Plasma-envelope blade oscillating at high frequency. Cuts light armor cleanly and scares everyone else.",
+      "manufacturer": "Voltline Systems",
+      "yearOfManufacture": 2948,
+      "stats": {
+        "baseDamage": 55,
+        "critChance": 18,
+        "armorPenetration": 20,
+        "range": 2,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.1,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 6,
+        "aoeDuration": 1.3
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "apply_bonus_damage(0.2);",
+        "onCrit": "",
+        "passive": "mark_as_advanced_tech();"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Bastion Entrench Spade",
+      "category": "Melee",
+      "description": "Heavy-duty folding spade used for digging defensive positions and discouraging close-range visitors.",
+      "manufacturer": "Bastion Arms",
+      "yearOfManufacture": 2701,
+      "stats": {
+        "baseDamage": 28,
+        "critChance": 4,
+        "armorPenetration": 6,
+        "range": 2,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.4,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if owner.is_defending then apply_bonus_damage(0.1); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 10,
+      "name": "Strix Hand-Sabre",
+      "category": "Melee",
+      "description": "Ultralight carbon sabre carried by elite executive bodyguards.",
+      "manufacturer": "Strix Industries",
+      "yearOfManufacture": 2880,
+      "stats": {
+        "baseDamage": 30,
+        "critChance": 20,
+        "armorPenetration": 5,
+        "range": 2,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.5,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "apply_status(target, \"bleed_crit\", 3.0);",
+        "passive": "prefer_for_role(\"bodyguard\");"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Ward Pulse-Tonfa",
+      "category": "Melee",
+      "description": "Tonfa with EMP pulse nodes used to disable drones and cybernetic limbs in melee.",
+      "manufacturer": "Ward Systems",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 18,
+        "critChance": 8,
+        "armorPenetration": 2,
+        "range": 1.5,
+        "projectileSpeed": 0,
+        "explosionRadius": 1.5,
+        "fireRate": 1.6,
+        "ammoType": "EMP",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 2,
+        "aoeDuration": 2.0
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "emit_emp_pulse(1.5);",
+        "onHit": "if target.has_tag(\"electronic\") then apply_bonus_damage(0.35); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 12,
+      "name": "Kestrel Pry-Bar",
+      "category": "Melee",
+      "description": "Titanium pry bar used by vehicle crews to open stuck panels, hatches, and occasionally hostile operators.",
+      "manufacturer": "Kestrel Dynamics",
+      "yearOfManufacture": 2733,
+      "stats": {
+        "baseDamage": 25,
+        "critChance": 5,
+        "armorPenetration": 5,
+        "range": 2,
+        "projectileSpeed": 0,
+        "explosionRadius": 0,
+        "fireRate": 1.3,
+        "ammoType": "None",
+        "ammoPerShot": 0,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "prefabs": {
+        "projectile": "",
+        "aoeField": ""
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.has_tag(\"vehicle\") then apply_cover_break(0.4); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"vehicle_crew\");"
+      }
+    },
+    {
+      "id": 101,
+      "name": "Sentinel-9 Service Pistol",
+      "category": "pistols",
+      "description": "Standard-issue 9mm sidearm for corporate security teams and privatized police forces. Reliable, boring, always there when a manager needs someone shot.",
+      "manufacturer": "Arclight Defense",
+      "yearOfManufacture": 2708,
+      "stats": {
+        "baseDamage": 22,
+        "critChance": 1,
+        "armorPenetration": 4,
+        "range": 30,
+        "projectileSpeed": 400,
+        "explosionRadius": 0,
+        "fireRate": 4.5,
+        "ammoType": "9mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "tag_weapon(\"standard_issue\"); prefer_for_role(\"patrol\");"
+      }
+    },
+    {
+      "id": 102,
+      "name": "Strix-45 Compact",
+      "category": "pistols",
+      "description": "Compact suppressed .45 pistol favored by internal audit teams and deniable assets. Vanishes under a cheap suit and keeps the paperwork light.",
+      "manufacturer": "Strix Industries",
+      "yearOfManufacture": 2721,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 15,
+        "armorPenetration": 5,
+        "range": 20,
+        "projectileSpeed": 320,
+        "explosionRadius": 0,
+        "fireRate": 3.5,
+        "ammoType": "45ACP",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_suppressed_shot(true);",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "if mission_tagged(\"stealth\") then prefer_for_role(\"agent\"); end;"
+      }
+    },
+    {
+      "id": 103,
+      "name": "Ironstar .44",
+      "category": "pistols",
+      "description": "Overbuilt heavy revolver designed to remind people that promotions are never guaranteed. Breaks elite body armor and weaker wrists.",
+      "manufacturer": "Ironstar Forge",
+      "yearOfManufacture": 2712,
+      "stats": {
+        "baseDamage": 40,
+        "critChance": 8,
+        "armorPenetration": 8,
+        "range": 25,
+        "projectileSpeed": 380,
+        "explosionRadius": 0,
+        "fireRate": 1.6,
+        "ammoType": "44Mag",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "apply_stagger(target, 1.5);",
+        "onCrit": "apply_status(target, \"panic\", 2.0);",
+        "passive": "restrict_to_role(\"enforcer\");"
+      }
+    },
+    {
+      "id": 104,
+      "name": "Arcline Taser Pistol",
+      "category": "pistols",
+      "description": "Short-range taser pistol used for captures, PR-friendly raids, and staged arrests for the evening news.",
+      "manufacturer": "Arcline Compliance",
+      "yearOfManufacture": 2730,
+      "stats": {
+        "baseDamage": 5,
+        "critChance": 0,
+        "armorPenetration": 0,
+        "range": 12,
+        "projectileSpeed": 80,
+        "explosionRadius": 0,
+        "fireRate": 1.2,
+        "ammoType": "Taser",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 4.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "apply_status(target, \"stunned\", 4.0);",
+        "onCrit": "",
+        "passive": "prefer_for_objective(\"capture\"); mark_as_non_lethal();"
+      }
+    },
+    {
+      "id": 105,
+      "name": "Warden-19 Machine Pistol",
+      "category": "pistols",
+      "description": "Compact automatic sidearm for bodyguards who expect trouble in the elevator and the boardroom.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2725,
+      "stats": {
+        "baseDamage": 18,
+        "critChance": 8,
+        "armorPenetration": 3,
+        "range": 18,
+        "projectileSpeed": 380,
+        "explosionRadius": 0,
+        "fireRate": 12.0,
+        "ammoType": "9mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_fire_mode(\"burst\"); limit_burst(5);",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"bodyguard\"); apply_recoil_profile(1.2);"
+      }
+    },
+    {
+      "id": 106,
+      "name": "Nomad-10 PDW Pistol",
+      "category": "pistols",
+      "description": "Stockless PDW tuned for vehicle crews and recon squads. More bite than a regular pistol, less bulk than a real rifle.",
+      "manufacturer": "Kestrel Dynamics",
+      "yearOfManufacture": 2742,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 1,
+        "armorPenetration": 10,
+        "range": 35,
+        "projectileSpeed": 550,
+        "explosionRadius": 0,
+        "fireRate": 8.0,
+        "ammoType": "5_7mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.armor < 8 then apply_bonus_damage(0.15); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"scout\"); prefer_for_role(\"vehicle_crew\");"
+      }
+    },
+    {
+      "id": 107,
+      "name": "Medica-7 Injector",
+      "category": "pistols",
+      "description": "Dart injector used by field medics and deniable biotech teams. Heals allies, quietly ruins evidence on enemies.",
+      "manufacturer": "Medica Labs",
+      "yearOfManufacture": 2738,
+      "stats": {
+        "baseDamage": 0,
+        "critChance": 0,
+        "armorPenetration": 0,
+        "range": 25,
+        "projectileSpeed": 220,
+        "explosionRadius": 0,
+        "fireRate": 2.0,
+        "ammoType": "Dart",
+        "ammoPerShot": 1,
+        "aoeTickDamage": -12,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.is_ally then heal(target, 12); else apply_status(target, \"sedated\", 3.0); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"medic\");"
+      }
+    },
+    {
+      "id": 108,
+      "name": "Voltline-22 EMP Pistol",
+      "category": "pistols",
+      "description": "Short-range EMP sidearm used by tech squads to shut down drones, turrets and smart-lock doors before they start screaming.",
+      "manufacturer": "Voltline Systems",
+      "yearOfManufacture": 2750,
+      "stats": {
+        "baseDamage": 8,
+        "critChance": 0,
+        "armorPenetration": 0,
+        "range": 16,
+        "projectileSpeed": 260,
+        "explosionRadius": 0,
+        "fireRate": 2.5,
+        "ammoType": "EMP",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 3.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.has_tag(\"electronic\") then apply_bonus_damage(0.5); apply_status(target, \"emp_disabled\", 3.0); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"hacker_support\");"
+      }
+    },
+    {
+      "id": 201,
+      "name": "Kestrel PD-4",
+      "category": "compact",
+      "description": "Light PDW designed for fast entries and rushing stairwells before anyone can lock the doors.",
+      "manufacturer": "Kestrel Dynamics",
+      "yearOfManufacture": 2729,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 8,
+        "armorPenetration": 4,
+        "range": 28,
+        "projectileSpeed": 600,
+        "explosionRadius": 0,
+        "fireRate": 12.0,
+        "ammoType": "4_6mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_fire_mode(\"auto\");",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"flanker\"); prefer_for_role(\"entry_team\");"
+      }
+    },
+    {
+      "id": 202,
+      "name": "Hailstorm-9",
+      "category": "compact",
+      "description": "High-rate SMG tuned to fill narrow corridors with so much lead that nobody argues about who owns the floor.",
+      "manufacturer": "Cascade Arsenal",
+      "yearOfManufacture": 2735,
+      "stats": {
+        "baseDamage": 19,
+        "critChance": 5,
+        "armorPenetration": 3,
+        "range": 24,
+        "projectileSpeed": 580,
+        "explosionRadius": 0,
+        "fireRate": 14.0,
+        "ammoType": "9mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 2,
+        "aoeDuration": 1.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "build_suppression(target, 0.6); spread_fire_over_group(3);",
+        "onCrit": "",
+        "passive": "tag_weapon(\"suppression\");"
+      }
+    },
+    {
+      "id": 203,
+      "name": "Streetline Mk.3",
+      "category": "compact",
+      "description": "Cheap stamped-metal SMG flooding back-alley workshops and disposable street crews. Malfunctions more than legal counsel.",
+      "manufacturer": "Streetline Fabrication",
+      "yearOfManufacture": 2718,
+      "stats": {
+        "baseDamage": 18,
+        "critChance": 3,
+        "armorPenetration": 2,
+        "range": 22,
+        "projectileSpeed": 520,
+        "explosionRadius": 0,
+        "fireRate": 11.0,
+        "ammoType": "9mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_jam_chance(0.08);",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "mark_as_low_tier(); reduce_cost(0.5);"
+      }
+    },
+    {
+      "id": 204,
+      "name": "Whisper-M7",
+      "category": "compact",
+      "description": "Integrally suppressed SMG for black-bag teams who need to erase a room without waking the rest of the tower.",
+      "manufacturer": "Strix Industries",
+      "yearOfManufacture": 2744,
+      "stats": {
+        "baseDamage": 19,
+        "critChance": 12,
+        "armorPenetration": 4,
+        "range": 26,
+        "projectileSpeed": 560,
+        "explosionRadius": 0,
+        "fireRate": 10.0,
+        "ammoType": "9mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_suppressed_shot(true); set_fire_mode(\"burst\"); limit_burst(3);",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "prefer_for_mission_tag(\"black_ops\");"
+      }
+    },
+    {
+      "id": 205,
+      "name": "Tempest-11 Hybrid",
+      "category": "compact",
+      "description": "Armor-leaning SMG running high-velocity ammo. Built for sweeping armored escorts off the street at uncomfortable distances.",
+      "manufacturer": "Tempest-Tech",
+      "yearOfManufacture": 2756,
+      "stats": {
+        "baseDamage": 21,
+        "critChance": 9,
+        "armorPenetration": 7,
+        "range": 27,
+        "projectileSpeed": 620,
+        "explosionRadius": 0,
+        "fireRate": 11.0,
+        "ammoType": "5_7mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.has_tag(\"elite\") and target.armor <= 10 then apply_bonus_damage(0.15); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"close_protection\");"
+      }
+    },
+    {
+      "id": 206,
+      "name": "Riotweave SMG",
+      "category": "compact",
+      "description": "Selectable lethal and non-lethal SMG used by riot teams, crowd control units, and anyone who needs the footage to look civil.",
+      "manufacturer": "Riotweave Solutions",
+      "yearOfManufacture": 2760,
+      "stats": {
+        "baseDamage": 17,
+        "critChance": 5,
+        "armorPenetration": 2,
+        "range": 25,
+        "projectileSpeed": 580,
+        "explosionRadius": 0,
+        "fireRate": 10.0,
+        "ammoType": "9mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 3,
+        "aoeDuration": 4.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.has_tag(\"civilian\") or mission_tagged(\"riot\") then switch_ammo(\"rubber\"); apply_status(target, \"knocked_down\", 2.0); else switch_ammo(\"lethal\"); end;",
+        "onCrit": "",
+        "passive": "prefer_for_mission_tag(\"crowd_control\");"
+      }
+    },
+    {
+      "id": 207,
+      "name": "Ranger-S PDW",
+      "category": "compact",
+      "description": "Long-barrel PDW tuned for street patrols and escort convoys where trouble starts at the far end of the block.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2748,
+      "stats": {
+        "baseDamage": 22,
+        "critChance": 8,
+        "armorPenetration": 5,
+        "range": 40,
+        "projectileSpeed": 650,
+        "explosionRadius": 0,
+        "fireRate": 9.0,
+        "ammoType": "4_6mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if distance_to(target) > 25 then apply_accuracy_bonus(0.15); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"urban_patrol\");"
+      }
+    },
+    {
+      "id": 208,
+      "name": "Ghostline Micro-SMG",
+      "category": "compact",
+      "description": "Concealable submachine gun disguised as an accessory piece. Popular with undercover agents and executives who expect a hostile buyout.",
+      "manufacturer": "Ghostline Labs",
+      "yearOfManufacture": 2773,
+      "stats": {
+        "baseDamage": 18,
+        "critChance": 1,
+        "armorPenetration": 3,
+        "range": 18,
+        "projectileSpeed": 550,
+        "explosionRadius": 0,
+        "fireRate": 15.0,
+        "ammoType": "9mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_draw_speed_bonus(0.4);",
+        "onHit": "if distance_to(target) < 10 then apply_bonus_damage(0.2); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"undercover\");"
+      }
+    },
+    {
+      "id": 301,
+      "name": "Cobalt-556 Carbine",
+      "category": "assault",
+      "description": "Baseline 5.56 carbine issued to contract troops, private militias and anyone who signs the right liability waiver.",
+      "manufacturer": "Cascade Arsenal",
+      "yearOfManufacture": 2719,
+      "stats": {
+        "baseDamage": 26,
+        "critChance": 12,
+        "armorPenetration": 8,
+        "range": 55,
+        "projectileSpeed": 780,
+        "explosionRadius": 0,
+        "fireRate": 9.0,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_fire_mode(\"auto\");",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "tag_weapon(\"workhorse\");"
+      }
+    },
+    {
+      "id": 302,
+      "name": "Hydra-73 Modular AR",
+      "category": "assault",
+      "description": "Modular rifle platform sold as a \"lifetime solution\" to agencies that change doctrine every quarter.",
+      "manufacturer": "Hydra Systems",
+      "yearOfManufacture": 2765,
+      "stats": {
+        "baseDamage": 25,
+        "critChance": 12,
+        "armorPenetration": 8,
+        "range": 60,
+        "projectileSpeed": 780,
+        "explosionRadius": 0,
+        "fireRate": 8.5,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "if owner.loadout_kit == \"DMR\" then apply_range_bonus(10); set_fire_mode(\"semi\"); end; if owner.loadout_kit == \"CQB\" then apply_swap_speed_bonus(0.25); set_fire_mode(\"burst\"); end;"
+      }
+    },
+    {
+      "id": 303,
+      "name": "Bastion-762",
+      "category": "assault",
+      "description": "7.62 carbine with more recoil than sense. Issued to anchor units who are expected to stay put and break anything that moves.",
+      "manufacturer": "Bastion Arms",
+      "yearOfManufacture": 2728,
+      "stats": {
+        "baseDamage": 32,
+        "critChance": 1,
+        "armorPenetration": 12,
+        "range": 60,
+        "projectileSpeed": 760,
+        "explosionRadius": 0,
+        "fireRate": 7.0,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "apply_recoil_profile(1.3);",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"anchor\");"
+      }
+    },
+    {
+      "id": 304,
+      "name": "Fluxline G3 Caseless",
+      "category": "assault",
+      "description": "Caseless rifle built to dump rounds in urban alleys and then melt itself if budget cuts ignore maintenance.",
+      "manufacturer": "Fluxline Armories",
+      "yearOfManufacture": 2782,
+      "stats": {
+        "baseDamage": 24,
+        "critChance": 13,
+        "armorPenetration": 9,
+        "range": 50,
+        "projectileSpeed": 820,
+        "explosionRadius": 0,
+        "fireRate": 11.0,
+        "ammoType": "Caseless",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "weapon.heat += 0.15;",
+        "onHit": "if weapon.heat > 0.7 then enforce_burst_limit(4); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 305,
+      "name": "Patrol-5 Carbine",
+      "category": "assault",
+      "description": "Lightweight patrol rifle built for long shifts, long streets, and longer reports afterwards.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2715,
+      "stats": {
+        "baseDamage": 23,
+        "critChance": 11,
+        "armorPenetration": 7,
+        "range": 50,
+        "projectileSpeed": 770,
+        "explosionRadius": 0,
+        "fireRate": 8.5,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "apply_ads_speed_bonus(0.2); if mission_tagged(\"patrol\") then reduce_fatigue_cost(0.25); end;"
+      }
+    },
+    {
+      "id": 306,
+      "name": "Urbanite-300 \"Shorty\"",
+      "category": "assault",
+      "description": "Chopped-down rifle optimized for cramped stairs, cheap motels and office cubicle raids.",
+      "manufacturer": "Urbanite Arms",
+      "yearOfManufacture": 2790,
+      "stats": {
+        "baseDamage": 24,
+        "critChance": 11,
+        "armorPenetration": 7,
+        "range": 35,
+        "projectileSpeed": 720,
+        "explosionRadius": 0,
+        "fireRate": 10.0,
+        "ammoType": "300BLK",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if line_of_sight_length() < 25 then apply_bonus_damage(0.15); else apply_accuracy_penalty(0.2); end;",
+        "onCrit": "",
+        "passive": "prefer_for_map_tag(\"dense_buildings\");"
+      }
+    },
+    {
+      "id": 307,
+      "name": "Sentinel-AR \"Linewatch\"",
+      "category": "assault",
+      "description": "Optics-integrated rifle designed for perimeter guards who get paid to stare down long streets and look dangerous on cameras.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2739,
+      "stats": {
+        "baseDamage": 25,
+        "critChance": 13,
+        "armorPenetration": 8,
+        "range": 65,
+        "projectileSpeed": 800,
+        "explosionRadius": 0,
+        "fireRate": 8.0,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "if owner.is_on_overwatch then apply_accuracy_bonus(0.2); end;"
+      }
+    },
+    {
+      "id": 308,
+      "name": "Cascade-545",
+      "category": "assault",
+      "description": "High-capacity 5.45 rifle used to arm conscripts, \"volunteers\" and anyone else too cheap to train properly.",
+      "manufacturer": "Cascade Arsenal",
+      "yearOfManufacture": 2723,
+      "stats": {
+        "baseDamage": 23,
+        "critChance": 8,
+        "armorPenetration": 6,
+        "range": 55,
+        "projectileSpeed": 780,
+        "explosionRadius": 0,
+        "fireRate": 10.5,
+        "ammoType": "5_45mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "increase_mag_capacity(0.25);",
+        "onHit": "apply_accuracy_penalty(0.15);",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"conscript\");"
+      }
+    },
+    {
+      "id": 401,
+      "name": "Longview-10",
+      "category": "snipers",
+      "description": "Semi-auto DMR for rooftop watchers and patient operators. Built to keep street protests at a safe distance.",
+      "manufacturer": "Ridgepoint Tactical",
+      "yearOfManufacture": 2717,
+      "stats": {
+        "baseDamage": 34,
+        "critChance": 16,
+        "armorPenetration": 12,
+        "range": 75,
+        "projectileSpeed": 820,
+        "explosionRadius": 0,
+        "fireRate": 3.0,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_fire_mode(\"semi\");",
+        "onHit": "if owner.is_elevated then apply_accuracy_bonus(0.2); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"overwatch\");"
+      }
+    },
+    {
+      "id": 402,
+      "name": "Marksman-12 \"Spire\"",
+      "category": "snipers",
+      "description": "Heavy-barrel DMR used to lock down long lanes between high-rises and elevated walkways.",
+      "manufacturer": "Ridgepoint Tactical",
+      "yearOfManufacture": 2731,
+      "stats": {
+        "baseDamage": 36,
+        "critChance": 18,
+        "armorPenetration": 13,
+        "range": 80,
+        "projectileSpeed": 830,
+        "explosionRadius": 0,
+        "fireRate": 2.8,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if owner.just_relocated then apply_accuracy_bonus(0.25); apply_ap_bonus(4); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 403,
+      "name": "Harrow-308",
+      "category": "snipers",
+      "description": "Mid-range battle rifle tuned to punish elites and shield lines that think distance is enough.",
+      "manufacturer": "Ironstar Forge",
+      "yearOfManufacture": 2722,
+      "stats": {
+        "baseDamage": 38,
+        "critChance": 14,
+        "armorPenetration": 14,
+        "range": 70,
+        "projectileSpeed": 810,
+        "explosionRadius": 0,
+        "fireRate": 2.5,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.has_tag(\"shielded\") then apply_bonus_damage(0.25); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 404,
+      "name": "Ridge-20 Scout Rifle",
+      "category": "snipers",
+      "description": "Light DMR issued to recon units expected to tag threats and stay alive long enough to report them.",
+      "manufacturer": "Ridgepoint Tactical",
+      "yearOfManufacture": 2740,
+      "stats": {
+        "baseDamage": 30,
+        "critChance": 16,
+        "armorPenetration": 10,
+        "range": 70,
+        "projectileSpeed": 800,
+        "explosionRadius": 0,
+        "fireRate": 3.3,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "apply_movement_speed_bonus(0.1); if owner.is_scout then reveal_tiles_in_front(6); end;"
+      }
+    },
+    {
+      "id": 405,
+      "name": "Bastion-D \"Designate\"",
+      "category": "snipers",
+      "description": "Semi-auto variant of the Bastion platform for deliberate, slow fire on priority targets.",
+      "manufacturer": "Bastion Arms",
+      "yearOfManufacture": 2752,
+      "stats": {
+        "baseDamage": 37,
+        "critChance": 17,
+        "armorPenetration": 14,
+        "range": 80,
+        "projectileSpeed": 820,
+        "explosionRadius": 0,
+        "fireRate": 2.2,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_fire_mode(\"semi\");",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "limit_magazine(15); if not target.is_priority then hold_fire(); end;"
+      }
+    },
+    {
+      "id": 406,
+      "name": "Linebreaker-35",
+      "category": "snipers",
+      "description": "Heavy battle rifle intended to tear apart barricades and improvised cover faster than crowds can build them.",
+      "manufacturer": "Ironstar Forge",
+      "yearOfManufacture": 2767,
+      "stats": {
+        "baseDamage": 40,
+        "critChance": 13,
+        "armorPenetration": 16,
+        "range": 65,
+        "projectileSpeed": 800,
+        "explosionRadius": 0,
+        "fireRate": 2.0,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.is_in_cover then apply_cover_break(0.6); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 407,
+      "name": "Vantage-21",
+      "category": "snipers",
+      "description": "Hybrid DMR bridging assault rifles and true sniper rifles for squads that can’t decide what they are.",
+      "manufacturer": "Ridgepoint Tactical",
+      "yearOfManufacture": 2779,
+      "stats": {
+        "baseDamage": 32,
+        "critChance": 17,
+        "armorPenetration": 12,
+        "range": 75,
+        "projectileSpeed": 820,
+        "explosionRadius": 0,
+        "fireRate": 3.0,
+        "ammoType": "6_8mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "if owner.is_moving_with_squad then reduce_aim_penalty_while_moving(0.5); end;"
+      }
+    },
+    {
+      "id": 408,
+      "name": "Skystepper Mk.II",
+      "category": "snipers",
+      "description": "DMR with integrated rangefinding suite, used to own long boulevard sightlines and open plazas.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2788,
+      "stats": {
+        "baseDamage": 33,
+        "critChance": 18,
+        "armorPenetration": 12,
+        "range": 85,
+        "projectileSpeed": 830,
+        "explosionRadius": 0,
+        "fireRate": 2.7,
+        "ammoType": "6_8mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if squad.has_drone_spot_on(target) then apply_accuracy_bonus(0.25); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 409,
+      "name": "Needle SR-1",
+      "category": "snipers",
+      "description": "Light sniper rifle deployed for \"behavior correction\" at distances too far for witnesses to swear on.",
+      "manufacturer": "Ridgepoint Tactical",
+      "yearOfManufacture": 2720,
+      "stats": {
+        "baseDamage": 60,
+        "critChance": 2,
+        "armorPenetration": 18,
+        "range": 90,
+        "projectileSpeed": 850,
+        "explosionRadius": 0,
+        "fireRate": 1.4,
+        "ammoType": "308Win",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.is_unaware then apply_bonus_damage(0.3); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 410,
+      "name": "Lancer AMR-50",
+      "category": "snipers",
+      "description": "Anti-materiel rifle that treats thin walls and light vehicles as suggestions rather than obstacles.",
+      "manufacturer": "Ironstar Forge",
+      "yearOfManufacture": 2733,
+      "stats": {
+        "baseDamage": 95,
+        "critChance": 15,
+        "armorPenetration": 30,
+        "range": 110,
+        "projectileSpeed": 900,
+        "explosionRadius": 0,
+        "fireRate": 0.6,
+        "ammoType": "50BMG",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "enable_wall_penetration(2);",
+        "onHit": "if target.has_tag(\"vehicle\") or target.has_tag(\"turret\") then apply_bonus_damage(0.4); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 411,
+      "name": "Whisperline S2",
+      "category": "snipers",
+      "description": "Suppressed sniper rifle for quiet decapitations of leadership and their replacement the next shift.",
+      "manufacturer": "Strix Industries",
+      "yearOfManufacture": 2762,
+      "stats": {
+        "baseDamage": 55,
+        "critChance": 22,
+        "armorPenetration": 16,
+        "range": 85,
+        "projectileSpeed": 820,
+        "explosionRadius": 0,
+        "fireRate": 1.1,
+        "ammoType": "308Win",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_suppressed_shot(true);",
+        "onHit": "if detection_risk(target) > 0.4 then hold_fire(); end;",
+        "onCrit": "",
+        "passive": "prefer_for_mission_tag(\"assassination\");"
+      }
+    },
+    {
+      "id": 412,
+      "name": "Prism-14",
+      "category": "snipers",
+      "description": "Semi-auto sniper built for urban counter-sniper work and erasing marked threats the second they lean out.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2770,
+      "stats": {
+        "baseDamage": 52,
+        "critChance": 18,
+        "armorPenetration": 14,
+        "range": 80,
+        "projectileSpeed": 830,
+        "explosionRadius": 0,
+        "fireRate": 2.2,
+        "ammoType": "308Win",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_fire_mode(\"semi\");",
+        "onHit": "if target.is_marked then apply_bonus_damage(0.2); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 413,
+      "name": "Longhook 338",
+      "category": "snipers",
+      "description": "Heavy precision rifle used to watch entire districts from a comfortable rooftop and ruin whoever steps into the wrong window.",
+      "manufacturer": "Ridgepoint Tactical",
+      "yearOfManufacture": 2785,
+      "stats": {
+        "baseDamage": 80,
+        "critChance": 2,
+        "armorPenetration": 22,
+        "range": 120,
+        "projectileSpeed": 880,
+        "explosionRadius": 0,
+        "fireRate": 0.8,
+        "ammoType": "338",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if distance_to(target) > 80 then apply_accuracy_bonus(0.25); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 414,
+      "name": "Ghostline-X (Generic)",
+      "category": "snipers",
+      "description": "Prototype rifle using soft-spectrum imaging data to punch through thin walls when the rest of the floor plan is redacted.",
+      "manufacturer": "Ghostline Labs",
+      "yearOfManufacture": 2946,
+      "stats": {
+        "baseDamage": 70,
+        "critChance": 18,
+        "armorPenetration": 20,
+        "range": 100,
+        "projectileSpeed": 840,
+        "explosionRadius": 0,
+        "fireRate": 1.0,
+        "ammoType": "SoftXRay",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if squad.has_scan_data_on(target) then ignore_thin_obstacle_once(); end;",
+        "onCrit": "",
+        "passive": "mark_as_prototype();"
+      }
+    },
+    {
+      "id": 415,
+      "name": "Spine-27",
+      "category": "snipers",
+      "description": "Mid-power semi sniper carried by assault sharpshooters who prefer to stay with the push instead of babysitting antennas.",
+      "manufacturer": "Ridgepoint Tactical",
+      "yearOfManufacture": 2794,
+      "stats": {
+        "baseDamage": 48,
+        "critChance": 16,
+        "armorPenetration": 14,
+        "range": 85,
+        "projectileSpeed": 830,
+        "explosionRadius": 0,
+        "fireRate": 2.0,
+        "ammoType": "308Win",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "reduce_move_shoot_penalty(0.5); if owner.is_advancing then keep_overwatch_after_move(); end;"
+      }
+    },
+    {
+      "id": 416,
+      "name": "Surveyor-09",
+      "category": "snipers",
+      "description": "Sniper rifle with an integrated spotter scope to tag targets and turn the whole squad into a firing line.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2802,
+      "stats": {
+        "baseDamage": 45,
+        "critChance": 18,
+        "armorPenetration": 12,
+        "range": 90,
+        "projectileSpeed": 820,
+        "explosionRadius": 0,
+        "fireRate": 1.8,
+        "ammoType": "308Win",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "apply_mark_on_hit(target, 6.0); team_accuracy_vs_marked(+0.15);",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 501,
+      "name": "Brick-12 Pump",
+      "category": "shotguns",
+      "description": "Heavy pump shotgun that doubles as a breaching tool and an HR solution at close range.",
+      "manufacturer": "Ironstar Forge",
+      "yearOfManufacture": 2714,
+      "stats": {
+        "baseDamage": 55,
+        "critChance": 8,
+        "armorPenetration": 6,
+        "range": 15,
+        "projectileSpeed": 350,
+        "explosionRadius": 0,
+        "fireRate": 1.1,
+        "ammoType": "12Gauge",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.is_door or target.is_wall then switch_ammo(\"HE_slug\"); else switch_ammo(\"buckshot\"); end;",
+        "onCrit": "",
+        "passive": "prefer_for_role(\"breacher\");"
+      }
+    },
+    {
+      "id": 502,
+      "name": "Scatter-8 Auto",
+      "category": "shotguns",
+      "description": "Semi-auto shotgun built to turn small rooms into redacted crime scenes in under a second.",
+      "manufacturer": "Cascade Arsenal",
+      "yearOfManufacture": 2727,
+      "stats": {
+        "baseDamage": 45,
+        "critChance": 8,
+        "armorPenetration": 5,
+        "range": 18,
+        "projectileSpeed": 360,
+        "explosionRadius": 0,
+        "fireRate": 3.0,
+        "ammoType": "12Gauge",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "tighten_spread(0.2);",
+        "onHit": "if distance_to(target) < 10 then apply_bonus_damage(0.15); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 503,
+      "name": "Thundercone-10",
+      "category": "shotguns",
+      "description": "Drum-fed shotgun able to drown riot lines in stagger rounds or buckshot, depending on who's watching.",
+      "manufacturer": "Riotweave Solutions",
+      "yearOfManufacture": 2768,
+      "stats": {
+        "baseDamage": 42,
+        "critChance": 7,
+        "armorPenetration": 4,
+        "range": 20,
+        "projectileSpeed": 340,
+        "explosionRadius": 0,
+        "fireRate": 2.4,
+        "ammoType": "10Gauge",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 4,
+        "aoeDuration": 1.5
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if mission_tagged(\"riot\") then switch_ammo(\"stagger\"); apply_status(target, \"knocked_down\", 2.5); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 504,
+      "name": "StreetSaw-6",
+      "category": "shotguns",
+      "description": "Sawed-off shotgun for close-quarters murders that still need to fit inside a briefcase.",
+      "manufacturer": "Streetline Fabrication",
+      "yearOfManufacture": 2736,
+      "stats": {
+        "baseDamage": 52,
+        "critChance": 6,
+        "armorPenetration": 3,
+        "range": 10,
+        "projectileSpeed": 320,
+        "explosionRadius": 0,
+        "fireRate": 2.8,
+        "ammoType": "12Gauge",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_huge_spread(true);",
+        "onHit": "if distance_to(target) > 8 then apply_damage_penalty(0.4); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 505,
+      "name": "Breacher-90 Bullpup",
+      "category": "shotguns",
+      "description": "Compact bullpup shotgun intended to sit behind riot shields and keep them feeling relevant.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2746,
+      "stats": {
+        "baseDamage": 48,
+        "critChance": 8,
+        "armorPenetration": 5,
+        "range": 16,
+        "projectileSpeed": 340,
+        "explosionRadius": 0,
+        "fireRate": 2.6,
+        "ammoType": "12Gauge",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "if owner.has_riot_shield then reduce_recoil(0.3); end;"
+      }
+    },
+    {
+      "id": 506,
+      "name": "Hammerfall-4 Slug Gun",
+      "category": "shotguns",
+      "description": "Slug-throwing shotgun that acts more like a pocket cannon against light vehicles and walking hardware.",
+      "manufacturer": "Ironstar Forge",
+      "yearOfManufacture": 2758,
+      "stats": {
+        "baseDamage": 60,
+        "critChance": 1,
+        "armorPenetration": 14,
+        "range": 35,
+        "projectileSpeed": 420,
+        "explosionRadius": 0,
+        "fireRate": 1.6,
+        "ammoType": "12Gauge",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_slug_only(true);",
+        "onHit": "if target.has_tag(\"light_vehicle\") or target.has_tag(\"mech\") then apply_bonus_damage(0.25); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 507,
+      "name": "Cloudburst Foamgun",
+      "category": "shotguns",
+      "description": "Foam projector shotgun used to glue crowds, doorways and sometimes entire protest lines to the pavement.",
+      "manufacturer": "Riotweave Solutions",
+      "yearOfManufacture": 2805,
+      "stats": {
+        "baseDamage": 8,
+        "critChance": 0,
+        "armorPenetration": 0,
+        "range": 18,
+        "projectileSpeed": 200,
+        "explosionRadius": 0,
+        "fireRate": 2.5,
+        "ammoType": "Foam",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 2,
+        "aoeDuration": 6.0
+      },
+      "scripts": {
+        "onFire": "coat_ground_in_foam(3.5);",
+        "onHit": "apply_status(target, \"slowed\", 4.0); if target.is_crowd then apply_status(target, \"immobilized\", 2.0); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 508,
+      "name": "Emberflare-12 Incendiary",
+      "category": "shotguns",
+      "description": "Incendiary shell shotgun used to seal doors, clear choke points and make evacuation routes theoretical.",
+      "manufacturer": "Helios Corp",
+      "yearOfManufacture": 2813,
+      "stats": {
+        "baseDamage": 38,
+        "critChance": 8,
+        "armorPenetration": 4,
+        "range": 18,
+        "projectileSpeed": 320,
+        "explosionRadius": 0,
+        "fireRate": 2.2,
+        "ammoType": "12Gauge",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 6,
+        "aoeDuration": 5.0
+      },
+      "scripts": {
+        "onFire": "spawn_fire_patch(3.0, 5.0);",
+        "onHit": "if target.is_in_chokepoint then apply_panic(target, 0.6); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 601,
+      "name": "Rampart-249",
+      "category": "special",
+      "description": "5.56 LMG built to keep heads down and keep street cameras full of muzzle flash.",
+      "manufacturer": "Cascade Arsenal",
+      "yearOfManufacture": 2726,
+      "stats": {
+        "baseDamage": 24,
+        "critChance": 8,
+        "armorPenetration": 10,
+        "range": 65,
+        "projectileSpeed": 780,
+        "explosionRadius": 0,
+        "fireRate": 11.0,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 3,
+        "aoeDuration": 1.5
+      },
+      "scripts": {
+        "onFire": "set_fire_mode(\"auto\");",
+        "onHit": "improve_stability_over_burst(0.2); build_suppression(target, 0.5);",
+        "onCrit": "",
+        "passive": "tag_weapon(\"sustained_suppression\");"
+      }
+    },
+    {
+      "id": 602,
+      "name": "Maelstrom-762",
+      "category": "special",
+      "description": "7.62 GPMG that chews light cover, crowd banners and squad morale with equal enthusiasm.",
+      "manufacturer": "Maelstrom Engineering",
+      "yearOfManufacture": 2734,
+      "stats": {
+        "baseDamage": 28,
+        "critChance": 8,
+        "armorPenetration": 14,
+        "range": 70,
+        "projectileSpeed": 770,
+        "explosionRadius": 0,
+        "fireRate": 10.0,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 4,
+        "aoeDuration": 1.5
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "build_suppression(target, 0.7); if target.is_in_light_cover then apply_bonus_damage(0.2); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 603,
+      "name": "Cycler-X Rotary",
+      "category": "special",
+      "description": "Light rotary LMG designed to erase swarms of lightly armored bodies as quickly as the board can sign the contract.",
+      "manufacturer": "Maelstrom Engineering",
+      "yearOfManufacture": 2789,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 7,
+        "armorPenetration": 8,
+        "range": 55,
+        "projectileSpeed": 760,
+        "explosionRadius": 0,
+        "fireRate": 18.0,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 5,
+        "aoeDuration": 1.0
+      },
+      "scripts": {
+        "onFire": "apply_spinup_time(1.0);",
+        "onHit": "if weapon.spinup >= 1.0 then increase_roF(0.5); end;",
+        "onCrit": "",
+        "passive": "tag_weapon(\"anti_swarm\");"
+      }
+    },
+    {
+      "id": 604,
+      "name": "Outpost-98",
+      "category": "special",
+      "description": "Squad automatic rifle variant for fast-moving assault teams who still need suppression on tap.",
+      "manufacturer": "Cascade Arsenal",
+      "yearOfManufacture": 2769,
+      "stats": {
+        "baseDamage": 23,
+        "critChance": 8,
+        "armorPenetration": 9,
+        "range": 60,
+        "projectileSpeed": 770,
+        "explosionRadius": 0,
+        "fireRate": 9.5,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 2,
+        "aoeDuration": 1.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "if owner.is_fast_assault then reduce_weight_penalty(0.3); end;"
+      }
+    },
+    {
+      "id": 605,
+      "name": "Bastion-L Support",
+      "category": "special",
+      "description": "Support LMG variant of the Bastion platform used to anchor intersections and long industrial corridors.",
+      "manufacturer": "Bastion Arms",
+      "yearOfManufacture": 2791,
+      "stats": {
+        "baseDamage": 25,
+        "critChance": 9,
+        "armorPenetration": 12,
+        "range": 75,
+        "projectileSpeed": 780,
+        "explosionRadius": 0,
+        "fireRate": 9.0,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 3,
+        "aoeDuration": 1.5
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "apply_range_bonus(10); if owner.is_defending then apply_accuracy_bonus(0.15); end;"
+      }
+    },
+    {
+      "id": 606,
+      "name": "Highway-73",
+      "category": "special",
+      "description": "Heavy LMG cleared for human use but clearly designed with vehicle pintle mounts in mind.",
+      "manufacturer": "Maelstrom Engineering",
+      "yearOfManufacture": 2800,
+      "stats": {
+        "baseDamage": 30,
+        "critChance": 8,
+        "armorPenetration": 14,
+        "range": 70,
+        "projectileSpeed": 770,
+        "explosionRadius": 0,
+        "fireRate": 8.0,
+        "ammoType": "7_62mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 3,
+        "aoeDuration": 1.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "if owner.is_vehicle_crew then apply_stability_bonus(0.25); end;"
+      }
+    },
+    {
+      "id": 607,
+      "name": "Hailbarrel-66",
+      "category": "special",
+      "description": "Box-fed LMG tuned for savage short bursts that either break an assault or run the gun dry.",
+      "manufacturer": "Cascade Arsenal",
+      "yearOfManufacture": 2810,
+      "stats": {
+        "baseDamage": 22,
+        "critChance": 8,
+        "armorPenetration": 9,
+        "range": 60,
+        "projectileSpeed": 780,
+        "explosionRadius": 0,
+        "fireRate": 15.0,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 4,
+        "aoeDuration": 1.0
+      },
+      "scripts": {
+        "onFire": "set_burst_cycle(1.2);",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "increase_reload_frequency(0.3);"
+      }
+    },
+    {
+      "id": 608,
+      "name": "Sentinel-SAW",
+      "category": "special",
+      "description": "Squad automatic variant of the Sentinel rifle, cheaper than full LMGs and easier to justify on balance sheets.",
+      "manufacturer": "Sentinel Works",
+      "yearOfManufacture": 2821,
+      "stats": {
+        "baseDamage": 23,
+        "critChance": 9,
+        "armorPenetration": 10,
+        "range": 65,
+        "projectileSpeed": 780,
+        "explosionRadius": 0,
+        "fireRate": 10.5,
+        "ammoType": "5_56mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 3,
+        "aoeDuration": 1.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": "reduce_cost(0.2); if squad.needs_suppression then mark_as_auto_selection(); end;"
+      }
+    },
+    {
+      "id": 701,
+      "name": "RGL-40 Grenade Launcher",
+      "category": "rockets",
+      "description": "Single-shot 40mm launcher used for everything from street clearing to \"accidental\" gas deployments.",
+      "manufacturer": "Arclight Defense",
+      "yearOfManufacture": 2724,
+      "stats": {
+        "baseDamage": 75,
+        "critChance": 5,
+        "armorPenetration": 12,
+        "range": 60,
+        "projectileSpeed": 70,
+        "explosionRadius": 4.5,
+        "fireRate": 0.6,
+        "ammoType": "Grenade40mm",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 10,
+        "aoeDuration": 0.0
+      },
+      "scripts": {
+        "onFire": "if mission.needs_smoke and target.is_exposed then switch_ammo(\"smoke\"); elseif target.is_grouped then switch_ammo(\"HE\"); else switch_ammo(\"flash\"); end;",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 702,
+      "name": "Raptor RPG-7N",
+      "category": "rockets",
+      "description": "Shoulder-fired rocket launcher used to terminate vehicles, stubborn barricades, and contracts.",
+      "manufacturer": "Ironstar Forge",
+      "yearOfManufacture": 2737,
+      "stats": {
+        "baseDamage": 110,
+        "critChance": 5,
+        "armorPenetration": 20,
+        "range": 80,
+        "projectileSpeed": 90,
+        "explosionRadius": 5.0,
+        "fireRate": 0.2,
+        "ammoType": "Rocket",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 18,
+        "aoeDuration": 0.0
+      },
+      "scripts": {
+        "onFire": "if not clear_backblast() or not has_clear_LOS(target) then hold_fire(); end;",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 703,
+      "name": "Strix ML-3 Micromissile",
+      "category": "rockets",
+      "description": "Three-tube micromissile launcher used to swat drones, light transports and anyone unlucky enough to be tagged first.",
+      "manufacturer": "Strix Industries",
+      "yearOfManufacture": 2855,
+      "stats": {
+        "baseDamage": 65,
+        "critChance": 8,
+        "armorPenetration": 16,
+        "range": 90,
+        "projectileSpeed": 140,
+        "explosionRadius": 3.0,
+        "fireRate": 0.8,
+        "ammoType": "Rocket",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 12,
+        "aoeDuration": 0.0
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "if target.is_marked then enable_semi_homing(true); end;",
+        "onCrit": "",
+        "passive": "volleys = clamp(requested_volley(), 1, 2); fire_missiles(volleys);"
+      }
+    },
+    {
+      "id": 609,
+      "name": "Pyrethrower-6",
+      "category": "special",
+      "description": "Industrial flamethrower repurposed for bunker clearing, trench denial and quiet union negotiations.",
+      "manufacturer": "Helios Corp",
+      "yearOfManufacture": 2889,
+      "stats": {
+        "baseDamage": 20,
+        "critChance": 0,
+        "armorPenetration": 0,
+        "range": 14,
+        "projectileSpeed": 25,
+        "explosionRadius": 0.0,
+        "fireRate": 12.0,
+        "ammoType": "FlamethrowerFuel",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 6,
+        "aoeDuration": 4.0
+      },
+      "scripts": {
+        "onFire": "emit_flamestream(4.5); spawn_fire_patch(4.5, 4.0);",
+        "onHit": "if target.is_in_bunker or target.is_in_trench then apply_panic(target, 0.7); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 801,
+      "name": "ArcStorm Tesla Rifle",
+      "category": "beam",
+      "description": "Arc weapon designed to crawl electricity through clustered units and remind mechs who's actually plugged in.",
+      "manufacturer": "Voltline Systems",
+      "yearOfManufacture": 2911,
+      "stats": {
+        "baseDamage": 26,
+        "critChance": 12,
+        "armorPenetration": 4,
+        "range": 25,
+        "projectileSpeed": 200,
+        "explosionRadius": 0.0,
+        "fireRate": 6.0,
+        "ammoType": "EMP",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 5,
+        "aoeDuration": 3.0
+      },
+      "scripts": {
+        "onFire": "chain_to_nearby_enemies(3);",
+        "onHit": "if target.has_tag(\"mech\") then apply_bonus_damage(0.3); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 62,
+      "name": "Helios-1 Laser Carbine",
+      "category": "beam",
+      "description": "Medium-power laser carbine designed for precise removal of drones, sensors and rooftop marksmen.",
+      "manufacturer": "Helios Corp",
+      "yearOfManufacture": 2932,
+      "stats": {
+        "baseDamage": 24,
+        "critChance": 18,
+        "armorPenetration": 10,
+        "range": 70,
+        "projectileSpeed": 1500,
+        "explosionRadius": 0.0,
+        "fireRate": 5.0,
+        "ammoType": "Laser",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "set_hitscan(true);",
+        "onHit": "if battlefield.is_smoky then apply_damage_penalty(0.25); end;",
+        "onCrit": "",
+        "passive": ""
+      }
+    },
+    {
+      "id": 63,
+      "name": "Manifold Coilgun",
+      "category": "beam",
+      "description": "Micro-coil rifle firing accelerated slugs that make a joke of cubicle walls and light armor.",
+      "manufacturer": "Manifold Dynamics",
+      "yearOfManufacture": 2944,
+      "stats": {
+        "baseDamage": 45,
+        "critChance": 15,
+        "armorPenetration": 22,
+        "range": 70,
+        "projectileSpeed": 900,
+        "explosionRadius": 0.0,
+        "fireRate": 1.2,
+        "ammoType": "Coil",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 0
+      },
+      "scripts": {
+        "onFire": "charge_time = 1.0;",
+        "onHit": "if target.is_slow_or_stationary then allow_full_charge(); end; enable_cover_pierce(true);",
+        "onCrit": "",
+        "passive": "mark_as_high_value_asset();"
+      }
+    },
+    {
+      "id": 64,
+      "name": "Ward-EMP Projector",
+      "category": "special",
+      "description": "Short-range EMP projector used to blackout security clusters, door networks and autonomous patrols in one ugly pulse.",
+      "manufacturer": "Ward Systems",
+      "yearOfManufacture": 2953,
+      "stats": {
+        "baseDamage": 10,
+        "critChance": 0,
+        "armorPenetration": 0,
+        "range": 18,
+        "projectileSpeed": 60,
+        "explosionRadius": 0.0,
+        "fireRate": 1.0,
+        "ammoType": "EMP",
+        "ammoPerShot": 1,
+        "aoeTickDamage": 0,
+        "aoeDuration": 4.0
+      },
+      "scripts": {
+        "onFire": "emit_emp_cone(60, 18);",
+        "onHit": "disable_electronics_in_cone(4.0);",
+        "onCrit": "",
+        "passive": ""
+      }
+    }
+  ]
+}
