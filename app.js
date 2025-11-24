@@ -13,6 +13,9 @@ const imageCache = {};
 // Card cache to avoid recreating DOM elements
 const cardCache = new Map();
 
+// Cache buster for images - use timestamp on page load
+const cacheBuster = Date.now();
+
 // Initialize the app
 async function init() {
     try {
@@ -296,7 +299,7 @@ async function loadWeaponImages(weapon) {
     if (!img) return; // Card may have been removed
     
     if (currentImage) {
-        img.src = currentImage;
+        img.src = `${currentImage}?v=${cacheBuster}`;
         img.classList.remove('placeholder');
     } else {
         // Add missing image indicator
@@ -362,7 +365,7 @@ async function findImageVariants(weaponName) {
 function switchVariant(weaponId, variantIndex, filename) {
     const img = document.getElementById(`img-${weaponId}`);
     if (img) {
-        img.src = filename;
+        img.src = `${filename}?v=${cacheBuster}`;
     }
     
     // Update active dot
@@ -381,7 +384,7 @@ function switchVariant(weaponId, variantIndex, filename) {
 function switchModalVariant(weaponId, variantIndex, filename) {
     const img = document.getElementById(`modal-img-${weaponId}`);
     if (img) {
-        img.src = filename;
+        img.src = `${filename}?v=${cacheBuster}`;
     }
     
     // Update active button
@@ -439,7 +442,7 @@ async function openModal(weapon) {
     const currentImage = variants.length > 0 ? variants[0].filename : null;
     
     const imageHTML = currentImage ?
-        `<img src="${currentImage}" alt="${weapon.name}" class="modal-weapon-image" id="modal-img-${weapon.id}">` :
+        `<img src="${currentImage}?v=${cacheBuster}" alt="${weapon.name}" class="modal-weapon-image" id="modal-img-${weapon.id}">` :
         `<div style="font-size: 120px;">🔫</div>`;
     
     // Generate skin swapper controls if multiple variants exist
