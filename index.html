@@ -14,21 +14,25 @@
         </header>
 
         <div class="controls">
-            <div class="filter-group">
-                <div class="label-with-icon">
-                    <div class="icon-container">
-                        <img id="selectedManufacturerIcon" class="filter-icon-img" alt="" style="display: none;">
-                        <span id="defaultManufacturerIcon" class="filter-icon-placeholder">✔</span>
-                    </div>
-                    <label for="manufacturerFilter">
-                        <span class="label-icon">🏢</span> Manufacturer
-                    </label>
+            <!-- 1) ICON banner first -->
+            <div class="filter-group icon-banner">
+                <div class="filter-banner" aria-hidden="true">
+                    <img id="selectedManufacturerBanner" class="filter-banner-img" alt="" style="display:none;">
+                    <span id="manufacturerBannerX" class="filter-banner-x" style="display:none;">✕</span>
                 </div>
+            </div>
+
+            <!-- 2) Manufacturer -->
+            <div class="filter-group">
+                <label for="manufacturerFilter">
+                    <span class="label-icon">🏢</span> Manufacturer
+                </label>
                 <select id="manufacturerFilter">
                     <option value="all">All Manufacturers</option>
                 </select>
             </div>
 
+            <!-- 3) Category -->
             <div class="filter-group">
                 <label for="categoryFilter">
                     <span class="label-icon">⚔️</span> Category
@@ -38,9 +42,10 @@
                 </select>
             </div>
 
+            <!-- 4) ID (sort) -->
             <div class="filter-group">
                 <label for="sortBy">
-                    <span class="label-icon">📊</span> Sort By
+                    <span class="label-icon">#</span> ID
                 </label>
                 <select id="sortBy">
                     <option value="id">ID</option>
@@ -54,11 +59,15 @@
                 </select>
             </div>
 
+            <!-- 5) Search -->
             <div class="filter-group search-group">
                 <label for="searchBox">
                     <span class="label-icon">🔍</span> Search
                 </label>
-                <input type="text" id="searchBox" placeholder="Search weapons...">
+                <div class="search-input-wrapper">
+                    <input type="text" id="searchBox" placeholder="Search weapons...">
+                    <button id="clearSearch" class="clear-search-btn" style="display: none;" title="Clear search">✕</button>
+                </div>
             </div>
         </div>
 

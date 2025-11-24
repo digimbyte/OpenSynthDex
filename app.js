@@ -34,6 +34,7 @@ async function init() {
         populateFilters();
         updateStats();
         initializeCards();
+        await updateManufacturerBanner(currentFilters.manufacturer);
         renderWeapons();
         setupEventListeners();
     } catch (error) {
@@ -99,7 +100,7 @@ function populateFilters() {
 function setupEventListeners() {
     document.getElementById('manufacturerFilter').addEventListener('change', async (e) => {
         currentFilters.manufacturer = e.target.value;
-        await updateManufacturerFilterIcon(e.target.value);
+        await updateManufacturerBanner(e.target.value);
         renderWeapons();
     });
     
@@ -113,8 +114,19 @@ function setupEventListeners() {
         renderWeapons();
     });
     
-    document.getElementById('searchBox').addEventListener('input', (e) => {
+    const searchBox = document.getElementById('searchBox');
+    const clearBtn = document.getElementById('clearSearch');
+    
+    searchBox.addEventListener('input', (e) => {
         currentFilters.search = e.target.value.toLowerCase();
+        clearBtn.style.display = e.target.value ? 'flex' : 'none';
+        renderWeapons();
+    });
+    
+    clearBtn.addEventListener('click', () => {
+        searchBox.value = '';
+        currentFilters.search = '';
+        clearBtn.style.display = 'none';
         renderWeapons();
     });
     
@@ -330,35 +342,35 @@ function generateManufacturerIconPath(manufacturer) {
     return `art/guilds/${filename}.png`;
 }
 
-// Update manufacturer filter icon in header
-async function updateManufacturerFilterIcon(manufacturer) {
-    const iconImg = document.getElementById('selectedManufacturerIcon');
-    const defaultIcon = document.getElementById('defaultManufacturerIcon');
-    
-    if (!iconImg || !defaultIcon) return;
-    
+// Update standalone manufacturer banner (image if found, X if missing, nothing for 'all')
+async function updateManufacturerBanner(manufacturer) {
+    const bannerImg = document.getElementById('selectedManufacturerBanner');
+    const bannerX = document.getElementById('manufacturerBannerX');
+    if (!bannerImg) return;
+
     if (manufacturer === 'all') {
-        // Show checkmark for "all"
-        iconImg.style.display = 'none';
-        defaultIcon.textContent = '✔';
-        defaultIcon.style.display = 'block';
-        defaultIcon.style.color = 'var(--accent-primary)';
+        bannerImg.style.display = 'none';
+        if (bannerX) bannerX.style.display = 'none';
         return;
     }
-    
+
     const iconPath = generateManufacturerIconPath(manufacturer);
     const exists = await checkImageExists(iconPath);
-    
+
     if (exists) {
-        iconImg.src = `${iconPath}?v=${cacheBuster}`;
-        iconImg.style.display = 'block';
-        defaultIcon.style.display = 'none';
+        bannerImg.src = `${iconPath}?v=${cacheBuster}`;
+        bannerImg.style.display = 'block';
+        if (bannerX) bannerX.style.display = 'none';
     } else {
-        // Show X for missing icon
-        iconImg.style.display = 'none';
-        defaultIcon.textContent = '✕';
-        defaultIcon.style.display = 'block';
-        defaultIcon.style.color = 'var(--accent-secondary)';
+        bannerImg.style.display = 'none';
+        if (bannerX) {
+            bannerX.style.display = 'flex';
+            // Add click handler to show expected filename
+            bannerX.onclick = (e) => {
+                e.stopPropagation();
+                showExpectedManufacturerFilename(manufacturer);
+            };
+        }
     }
 }
 
@@ -718,6 +730,17 @@ function showExpectedFilename(weaponName) {
     showToast(
         '🖼️ Missing Image',
         `Expected: ${primaryFilename}<br><br>Tried ${variations.length} variations`
+    );
+}
+
+// Show expected filename for missing manufacturer icon
+function showExpectedManufacturerFilename(manufacturer) {
+    const iconPath = generateManufacturerIconPath(manufacturer);
+    const filename = iconPath.replace('art/', '');
+    
+    showToast(
+        '🏢 Missing Icon',
+        `Expected: ${filename}`
     );
 }
 
