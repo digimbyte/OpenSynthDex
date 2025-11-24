@@ -338,9 +338,11 @@ async function updateManufacturerFilterIcon(manufacturer) {
     if (!iconImg || !defaultIcon) return;
     
     if (manufacturer === 'all') {
-        // Show default emoji icon
+        // Show checkmark for "all"
         iconImg.style.display = 'none';
+        defaultIcon.textContent = '✔';
         defaultIcon.style.display = 'inline';
+        defaultIcon.style.color = 'var(--accent-primary)';
         return;
     }
     
@@ -352,9 +354,11 @@ async function updateManufacturerFilterIcon(manufacturer) {
         iconImg.style.display = 'inline';
         defaultIcon.style.display = 'none';
     } else {
-        // Keep default icon if no image found
+        // Show X for missing icon
         iconImg.style.display = 'none';
+        defaultIcon.textContent = '✕';
         defaultIcon.style.display = 'inline';
+        defaultIcon.style.color = 'var(--accent-secondary)';
     }
 }
 
