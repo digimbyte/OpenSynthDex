@@ -363,11 +363,11 @@ async function renderWeapons() {
         return;
     }
     
-    // Render cards (with async image loading)
-    for (const weapon of filtered) {
-        const card = await createWeaponCard(weapon);
-        grid.appendChild(card);
-    }
+    // Create all cards in parallel, then append them in order
+    const cardPromises = filtered.map(weapon => createWeaponCard(weapon));
+    const cards = await Promise.all(cardPromises);
+    
+    cards.forEach(card => grid.appendChild(card));
     
     updateDisplayedCount(filtered.length);
 }
