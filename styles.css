@@ -82,27 +82,37 @@ header h1 {
     letter-spacing: 1px;
 }
 
-.label-icon {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    text-align: center;
-    line-height: 24px;
-    font-size: 1.2rem;
-    margin-right: 8px;
-    vertical-align: middle;
+.label-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.label-icon-img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    margin-right: 8px;
-    border-radius: 4px;
+.icon-container {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(92, 107, 192, 0.1);
     border: 1px solid var(--border-color);
-    padding: 2px;
-    vertical-align: middle;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.filter-icon-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.filter-icon-placeholder {
+    font-size: 1.2rem;
+    color: var(--accent-primary);
+}
+
+.label-icon {
+    margin-right: 5px;
 }
 
 .modal-manufacturer-icon {

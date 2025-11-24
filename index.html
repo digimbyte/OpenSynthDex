@@ -15,11 +15,15 @@
 
         <div class="controls">
             <div class="filter-group">
-                <label for="manufacturerFilter">
-                    <img id="selectedManufacturerIcon" class="label-icon-img" alt="" style="display: none;">
-                    <span id="defaultManufacturerIcon" class="label-icon" style="color: var(--accent-primary);">✔</span>
-                    Manufacturer
-                </label>
+                <div class="label-with-icon">
+                    <div class="icon-container">
+                        <img id="selectedManufacturerIcon" class="filter-icon-img" alt="" style="display: none;">
+                        <span id="defaultManufacturerIcon" class="filter-icon-placeholder">✔</span>
+                    </div>
+                    <label for="manufacturerFilter">
+                        <span class="label-icon">🏢</span> Manufacturer
+                    </label>
+                </div>
                 <select id="manufacturerFilter">
                     <option value="all">All Manufacturers</option>
                 </select>

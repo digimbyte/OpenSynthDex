@@ -341,7 +341,7 @@ async function updateManufacturerFilterIcon(manufacturer) {
         // Show checkmark for "all"
         iconImg.style.display = 'none';
         defaultIcon.textContent = '✔';
-        defaultIcon.style.display = 'inline';
+        defaultIcon.style.display = 'block';
         defaultIcon.style.color = 'var(--accent-primary)';
         return;
     }
@@ -351,13 +351,13 @@ async function updateManufacturerFilterIcon(manufacturer) {
     
     if (exists) {
         iconImg.src = `${iconPath}?v=${cacheBuster}`;
-        iconImg.style.display = 'inline';
+        iconImg.style.display = 'block';
         defaultIcon.style.display = 'none';
     } else {
         // Show X for missing icon
         iconImg.style.display = 'none';
         defaultIcon.textContent = '✕';
-        defaultIcon.style.display = 'inline';
+        defaultIcon.style.display = 'block';
         defaultIcon.style.color = 'var(--accent-secondary)';
     }
 }
