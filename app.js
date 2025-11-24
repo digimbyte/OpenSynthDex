@@ -48,13 +48,43 @@ function populateFilters() {
     const manufacturers = [...new Set(weaponsData.map(w => w.manufacturer))].sort();
     const categories = [...new Set(weaponsData.map(w => w.category))].sort();
     
+    // Define faction manufacturers
+    const factionManufacturers = [
+        'Black Vein Syndicate', 'Chimera Protocol', 'Glass Harbor Collective',
+        'Harvest Guild', 'HelioCrypt Overmind', 'Nexus Archives',
+        'Night Censors', 'Null Sanctum', 'Pillar Ascendancy',
+        'Proxy Choir', 'Radial Swarm', 'Rust Communion', 'Undercurrent Union'
+    ];
+    
+    // Separate generic and faction manufacturers
+    const genericMfrs = manufacturers.filter(m => !factionManufacturers.includes(m));
+    const factionMfrs = manufacturers.filter(m => factionManufacturers.includes(m));
+    
     const manufacturerFilter = document.getElementById('manufacturerFilter');
-    manufacturers.forEach(mfr => {
+    
+    // Add generic manufacturers
+    genericMfrs.forEach(mfr => {
         const option = document.createElement('option');
         option.value = mfr;
         option.textContent = mfr;
         manufacturerFilter.appendChild(option);
     });
+    
+    // Add faction divider
+    if (factionMfrs.length > 0) {
+        const divider = document.createElement('option');
+        divider.disabled = true;
+        divider.textContent = '═══ Factions ═══';
+        manufacturerFilter.appendChild(divider);
+        
+        // Add faction manufacturers
+        factionMfrs.forEach(mfr => {
+            const option = document.createElement('option');
+            option.value = mfr;
+            option.textContent = mfr;
+            manufacturerFilter.appendChild(option);
+        });
+    }
     
     const categoryFilter = document.getElementById('categoryFilter');
     categories.forEach(cat => {
