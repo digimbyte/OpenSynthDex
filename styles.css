@@ -86,6 +86,27 @@ header h1 {
     margin-right: 5px;
 }
 
+.label-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 5px;
+    border-radius: 4px;
+    background: rgba(92, 107, 192, 0.1);
+    border: 1px solid var(--border-color);
+    padding: 2px;
+    vertical-align: middle;
+}
+
+.modal-manufacturer-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px;
+}
+
 .filter-group select,
 .filter-group input {
     padding: 10px 12px;

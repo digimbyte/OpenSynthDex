@@ -97,8 +97,9 @@ function populateFilters() {
 
 // Setup event listeners
 function setupEventListeners() {
-    document.getElementById('manufacturerFilter').addEventListener('change', (e) => {
+    document.getElementById('manufacturerFilter').addEventListener('change', async (e) => {
         currentFilters.manufacturer = e.target.value;
+        await updateManufacturerFilterIcon(e.target.value);
         renderWeapons();
     });
     
@@ -291,10 +292,6 @@ function createWeaponCard(weapon) {
         <div class="weapon-info">
             <h3 class="weapon-name">${weapon.name}</h3>
             <span class="weapon-category">${weapon.category}</span>
-            <div class="weapon-manufacturer-container">
-                <img class="manufacturer-icon placeholder" id="mfr-icon-${weapon.id}" alt="${weapon.manufacturer}">
-                <p class="weapon-manufacturer">${weapon.manufacturer}</p>
-            </div>
             <p class="weapon-year">📅 ${weapon.yearOfManufacture}</p>
             <p class="weapon-description">${weapon.description}</p>
             <div class="weapon-stats-preview">
@@ -319,7 +316,6 @@ function createWeaponCard(weapon) {
     
     // Load images asynchronously after card is created
     loadWeaponImages(weapon);
-    loadManufacturerIcon(weapon);
     
     return card;
 }
@@ -332,6 +328,34 @@ function generateManufacturerIconPath(manufacturer) {
         .replace(/[^\w_]/g, ''); // Remove special characters
     
     return `art/guilds/${filename}.png`;
+}
+
+// Update manufacturer filter icon in header
+async function updateManufacturerFilterIcon(manufacturer) {
+    const iconImg = document.getElementById('selectedManufacturerIcon');
+    const defaultIcon = document.getElementById('defaultManufacturerIcon');
+    
+    if (!iconImg || !defaultIcon) return;
+    
+    if (manufacturer === 'all') {
+        // Show default emoji icon
+        iconImg.style.display = 'none';
+        defaultIcon.style.display = 'inline';
+        return;
+    }
+    
+    const iconPath = generateManufacturerIconPath(manufacturer);
+    const exists = await checkImageExists(iconPath);
+    
+    if (exists) {
+        iconImg.src = `${iconPath}?v=${cacheBuster}`;
+        iconImg.style.display = 'inline';
+        defaultIcon.style.display = 'none';
+    } else {
+        // Keep default icon if no image found
+        iconImg.style.display = 'none';
+        defaultIcon.style.display = 'inline';
+    }
 }
 
 // Load manufacturer icon asynchronously
@@ -562,12 +586,19 @@ async function openModal(weapon) {
         </div>
     ` : '';
     
+    // Load manufacturer icon
+    const mfrIconPath = generateManufacturerIconPath(weapon.manufacturer);
+    const mfrIconExists = await checkImageExists(mfrIconPath);
+    const mfrIconHTML = mfrIconExists ?
+        `<img src="${mfrIconPath}?v=${cacheBuster}" class="modal-manufacturer-icon" alt="${weapon.manufacturer}">` :
+        '🏢';
+    
     modalBody.innerHTML = `
         <div class="modal-header">
             <h2 class="modal-weapon-name">${weapon.name}</h2>
             <div class="modal-weapon-meta">
                 <span class="weapon-category">${weapon.category}</span>
-                <span class="weapon-manufacturer" style="display: inline-block; padding: 4px 10px; background: rgba(92, 107, 192, 0.2); border-radius: 5px; border: 1px solid var(--text-muted);">🏢 ${weapon.manufacturer}</span>
+                <span class="weapon-manufacturer" style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 10px; background: rgba(92, 107, 192, 0.2); border-radius: 5px; border: 1px solid var(--text-muted);">${mfrIconHTML} ${weapon.manufacturer}</span>
                 <span class="weapon-year" style="display: inline-block; padding: 4px 10px; background: rgba(255, 170, 0, 0.2); border-radius: 5px; border: 1px solid var(--accent-warning);">📅 ${weapon.yearOfManufacture}</span>
                 <span style="display: inline-block; padding: 4px 10px; background: rgba(0, 217, 255, 0.2); border-radius: 5px; border: 1px solid var(--accent-primary); color: var(--accent-primary);">#${weapon.id}</span>
             </div>
