@@ -10,6 +10,9 @@ let currentFilters = {
 // Image cache to track which variants exist
 const imageCache = {};
 
+// Card cache to avoid recreating DOM elements
+const cardCache = new Map();
+
 // Initialize the app
 async function init() {
     try {
@@ -27,6 +30,7 @@ async function init() {
         
         populateFilters();
         updateStats();
+        initializeCards();
         renderWeapons();
         setupEventListeners();
     } catch (error) {
@@ -230,63 +234,26 @@ async function checkImageExists(url) {
     });
 }
 
-// Find all image variants for a weapon
-async function findImageVariants(weaponName) {
-    const variantSuffixes = ['', '_a', '_b', '_c', '_d', '_e'];
-    const availableVariants = [];
-    
-    for (const suffix of variantSuffixes) {
-        const variations = generateFilenameVariations(weaponName, suffix);
-        
-        // Try each variation until we find one that exists
-        for (const filename of variations) {
-            const exists = await checkImageExists(filename);
-            if (exists) {
-                availableVariants.push({ variant: suffix, filename });
-                break; // Found this variant, move to next suffix
-            }
-        }
+// Create weapon card (synchronous, without images)
+function createWeaponCard(weapon) {
+    // Check cache first
+    if (cardCache.has(weapon.id)) {
+        return cardCache.get(weapon.id);
     }
     
-    return availableVariants;
-}
-
-// Create weapon card with image variant support
-async function createWeaponCard(weapon) {
     const card = document.createElement('div');
     card.className = 'weapon-card';
+    card.dataset.weaponId = weapon.id;
     card.onclick = () => openModal(weapon);
     
-    const variants = await findImageVariants(weapon.name);
-    const currentImage = variants.length > 0 ? variants[0].filename : null;
-    
-    const imageHTML = currentImage ?
-        `<img src="${currentImage}" alt="${weapon.name}" class="weapon-image" id="img-${weapon.id}">` :
-        `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' text-anchor='middle' dominant-baseline='middle' font-size='40' fill='%235c6bc0'%3E🔫%3C/text%3E%3C/svg%3E" alt="Placeholder" class="weapon-image placeholder">`;
-    
-    // Add missing image indicator if no image found
-    const missingImageHTML = !currentImage ? `
-        <div class="missing-image-indicator" data-weapon-name="${weapon.name.replace(/"/g, '&quot;')}" onclick="event.stopPropagation(); showExpectedFilename(this.getAttribute('data-weapon-name'))">✕</div>
-    ` : '';
-    
-    const variantsHTML = variants.length > 1 ? `
-        <div class="image-variant-indicator">
-            ${variants.map((v, idx) => 
-                `<span class="variant-dot ${idx === 0 ? 'active' : ''}" 
-                      data-weapon-id="${weapon.id}" 
-                      data-variant-index="${idx}" 
-                      data-filename="${v.filename}"
-                      onclick="event.stopPropagation(); switchVariant(${weapon.id}, ${idx}, '${v.filename}')"></span>`
-            ).join('')}
-        </div>
-    ` : '';
+    // Start with placeholder image
+    const imageHTML = `<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' text-anchor='middle' dominant-baseline='middle' font-size='40' fill='%235c6bc0'%3E🔫%3C/text%3E%3C/svg%3E" alt="${weapon.name}" class="weapon-image placeholder" id="img-${weapon.id}">`;
     
     card.innerHTML = `
         <div class="weapon-image-container">
             <div class="weapon-id">#${weapon.id}</div>
             ${imageHTML}
-            ${missingImageHTML}
-            ${variantsHTML}
+            <div id="variant-container-${weapon.id}"></div>
         </div>
         <div class="weapon-info">
             <h3 class="weapon-name">${weapon.name}</h3>
@@ -311,8 +278,85 @@ async function createWeaponCard(weapon) {
         </div>
     `;
     
+    // Cache the card
+    cardCache.set(weapon.id, card);
+    
+    // Load images asynchronously after card is created
+    loadWeaponImages(weapon);
+    
     return card;
 }
+
+// Load images for a weapon card asynchronously
+async function loadWeaponImages(weapon) {
+    const variants = await findImageVariants(weapon.name);
+    const currentImage = variants.length > 0 ? variants[0].filename : null;
+    
+    const img = document.getElementById(`img-${weapon.id}`);
+    if (!img) return; // Card may have been removed
+    
+    if (currentImage) {
+        img.src = currentImage;
+        img.classList.remove('placeholder');
+    } else {
+        // Add missing image indicator
+        const container = img.parentElement;
+        const missingIndicator = document.createElement('div');
+        missingIndicator.className = 'missing-image-indicator';
+        missingIndicator.dataset.weaponName = weapon.name;
+        missingIndicator.textContent = '✕';
+        missingIndicator.onclick = (e) => {
+            e.stopPropagation();
+            showExpectedFilename(weapon.name);
+        };
+        container.appendChild(missingIndicator);
+    }
+    
+    // Add variant dots if multiple variants exist
+    if (variants.length > 1) {
+        const variantContainer = document.getElementById(`variant-container-${weapon.id}`);
+        if (variantContainer) {
+            const variantIndicator = document.createElement('div');
+            variantIndicator.className = 'image-variant-indicator';
+            variantIndicator.innerHTML = variants.map((v, idx) => 
+                `<span class="variant-dot ${idx === 0 ? 'active' : ''}" 
+                      data-weapon-id="${weapon.id}" 
+                      data-variant-index="${idx}" 
+                      data-filename="${v.filename}"
+                      onclick="event.stopPropagation(); switchVariant(${weapon.id}, ${idx}, '${v.filename}')"></span>`
+            ).join('');
+            variantContainer.appendChild(variantIndicator);
+        }
+    }
+}
+
+// Initialize all weapon cards on first load
+function initializeCards() {
+    // Create all cards synchronously
+    weaponsData.forEach(weapon => createWeaponCard(weapon));
+}
+
+// Find all image variants for a weapon
+async function findImageVariants(weaponName) {
+    const variantSuffixes = ['', '_a', '_b', '_c', '_d', '_e'];
+    const availableVariants = [];
+    
+    for (const suffix of variantSuffixes) {
+        const variations = generateFilenameVariations(weaponName, suffix);
+        
+        // Try each variation until we find one that exists
+        for (const filename of variations) {
+            const exists = await checkImageExists(filename);
+            if (exists) {
+                availableVariants.push({ variant: suffix, filename });
+                break; // Found this variant, move to next suffix
+            }
+        }
+    }
+    
+    return availableVariants;
+}
+
 
 // Switch image variant
 function switchVariant(weaponId, variantIndex, filename) {
@@ -351,8 +395,8 @@ function switchModalVariant(weaponId, variantIndex, filename) {
     });
 }
 
-// Render weapons
-async function renderWeapons() {
+// Fast render using cached cards
+function renderWeapons() {
     const filtered = getFilteredWeapons();
     const grid = document.getElementById('weaponGrid');
     grid.innerHTML = '';
@@ -363,14 +407,17 @@ async function renderWeapons() {
         return;
     }
     
-    // Create all cards in parallel, then append them in order
-    const cardPromises = filtered.map(weapon => createWeaponCard(weapon));
-    const cards = await Promise.all(cardPromises);
-    
-    cards.forEach(card => grid.appendChild(card));
+    // Append cached cards from filtered weapons
+    filtered.forEach(weapon => {
+        const card = cardCache.get(weapon.id);
+        if (card) {
+            grid.appendChild(card);
+        }
+    });
     
     updateDisplayedCount(filtered.length);
 }
+
 
 // Update stats
 function updateStats() {
