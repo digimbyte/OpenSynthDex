@@ -193,7 +193,7 @@ function generateImageFilename(weaponName, variant = '') {
         filename += variant;
     }
     
-    return `art/${filename}.png`;
+    return `art/weapons/${filename}.png`;
 }
 
 // Generate multiple filename variations to try
@@ -210,37 +210,37 @@ function generateFilenameVariations(weaponName, variantSuffix = '') {
         .replace(/[^\w_]/g, '');
     
     // Try exact match
-    variations.push(`art/${base}${variantSuffix}.png`);
+    variations.push(`art/weapons/${base}${variantSuffix}.png`);
     
     // Try with trailing underscore (common pattern)
     if (variantSuffix === '') {
-        variations.push(`art/${base}_.png`);
+        variations.push(`art/weapons/${base}_.png`);
     } else {
-        variations.push(`art/${base}_${variantSuffix}.png`);
+        variations.push(`art/weapons/${base}_${variantSuffix}.png`);
     }
     
     // Try lowercase last word (common pattern like Arcline_Shock_baton)
     const parts = base.split('_');
     if (parts.length > 1) {
         const lastLower = [...parts.slice(0, -1), parts[parts.length - 1].toLowerCase()].join('_');
-        variations.push(`art/${lastLower}${variantSuffix}.png`);
+        variations.push(`art/weapons/${lastLower}${variantSuffix}.png`);
         if (variantSuffix === '') {
-            variations.push(`art/${lastLower}_.png`);
+            variations.push(`art/weapons/${lastLower}_.png`);
         }
     }
     
     // Try with -sheet pattern for variants (like Fluxline_G3_Caseless-sheet.png)
     if (variantSuffix === '_a') {
-        variations.push(`art/${base}-sheet_a.png`);
+        variations.push(`art/weapons/${base}-sheet_a.png`);
         if (parts.length > 1) {
             const lastLower = [...parts.slice(0, -1), parts[parts.length - 1].toLowerCase()].join('_');
-            variations.push(`art/${lastLower}-sheet_a.png`);
+            variations.push(`art/weapons/${lastLower}-sheet_a.png`);
         }
     } else if (variantSuffix === '') {
-        variations.push(`art/${base}-sheet.png`);
+        variations.push(`art/weapons/${base}-sheet.png`);
         if (parts.length > 1) {
             const lastLower = [...parts.slice(0, -1), parts[parts.length - 1].toLowerCase()].join('_');
-            variations.push(`art/${lastLower}-sheet.png`);
+            variations.push(`art/weapons/${lastLower}-sheet.png`);
         }
     }
     
@@ -331,7 +331,7 @@ function generateManufacturerIconPath(manufacturer) {
         .replace(/\s+/g, '_')  // Replace spaces with underscores
         .replace(/[^\w_]/g, ''); // Remove special characters
     
-    return `guild/${filename}.png`;
+    return `art/guilds/${filename}.png`;
 }
 
 // Load manufacturer icon asynchronously
@@ -354,7 +354,7 @@ async function loadManufacturerIcon(weapon) {
             const missingIndicator = document.createElement('span');
             missingIndicator.className = 'missing-guild-icon';
             missingIndicator.textContent = '✕';
-            missingIndicator.title = `Missing icon: ${iconPath.replace('guild/', '')}`;
+            missingIndicator.title = `Missing icon: ${iconPath.replace('art/guilds/', '')}`;
             container.insertBefore(missingIndicator, container.firstChild);
         }
     }
