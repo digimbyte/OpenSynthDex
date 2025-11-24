@@ -254,10 +254,46 @@ header h1 {
     border: 1px solid var(--accent-secondary);
 }
 
+.weapon-manufacturer-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.manufacturer-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: rgba(92, 107, 192, 0.1);
+    border: 1px solid var(--border-color);
+    padding: 4px;
+}
+
+.manufacturer-icon.placeholder {
+    display: none;
+}
+
+.missing-guild-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 51, 102, 0.1);
+    border: 1px solid var(--accent-secondary);
+    border-radius: 4px;
+    color: var(--accent-secondary);
+    font-size: 1.2rem;
+    cursor: help;
+    flex-shrink: 0;
+}
+
 .weapon-manufacturer {
     color: var(--text-muted);
     font-size: 0.9rem;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .weapon-year {

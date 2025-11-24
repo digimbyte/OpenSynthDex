@@ -291,7 +291,10 @@ function createWeaponCard(weapon) {
         <div class="weapon-info">
             <h3 class="weapon-name">${weapon.name}</h3>
             <span class="weapon-category">${weapon.category}</span>
-            <p class="weapon-manufacturer">🏢 ${weapon.manufacturer}</p>
+            <div class="weapon-manufacturer-container">
+                <img class="manufacturer-icon placeholder" id="mfr-icon-${weapon.id}" alt="${weapon.manufacturer}">
+                <p class="weapon-manufacturer">${weapon.manufacturer}</p>
+            </div>
             <p class="weapon-year">📅 ${weapon.yearOfManufacture}</p>
             <p class="weapon-description">${weapon.description}</p>
             <div class="weapon-stats-preview">
@@ -316,8 +319,45 @@ function createWeaponCard(weapon) {
     
     // Load images asynchronously after card is created
     loadWeaponImages(weapon);
+    loadManufacturerIcon(weapon);
     
     return card;
+}
+
+// Generate manufacturer icon filename
+function generateManufacturerIconPath(manufacturer) {
+    // Convert manufacturer name to filename format
+    const filename = manufacturer
+        .replace(/\s+/g, '_')  // Replace spaces with underscores
+        .replace(/[^\w_]/g, ''); // Remove special characters
+    
+    return `guild/${filename}.png`;
+}
+
+// Load manufacturer icon asynchronously
+async function loadManufacturerIcon(weapon) {
+    const iconPath = generateManufacturerIconPath(weapon.manufacturer);
+    const iconImg = document.getElementById(`mfr-icon-${weapon.id}`);
+    
+    if (!iconImg) return;
+    
+    const exists = await checkImageExists(iconPath);
+    
+    if (exists) {
+        iconImg.src = `${iconPath}?v=${cacheBuster}`;
+        iconImg.classList.remove('placeholder');
+    } else {
+        // Show X for missing icon
+        iconImg.style.display = 'none';
+        const container = iconImg.parentElement;
+        if (!container.querySelector('.missing-guild-icon')) {
+            const missingIndicator = document.createElement('span');
+            missingIndicator.className = 'missing-guild-icon';
+            missingIndicator.textContent = '✕';
+            missingIndicator.title = `Missing icon: ${iconPath.replace('guild/', '')}`;
+            container.insertBefore(missingIndicator, container.firstChild);
+        }
+    }
 }
 
 // Load images for a weapon card asynchronously
