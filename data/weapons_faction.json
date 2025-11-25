@@ -129,7 +129,7 @@
       "id": 1006,
       "name": "Black Sun",
       "category": "Heavy",
-      "description": "Focus array beam weapon with moral targeting - affects only hostile or legally-flagged targets, sparing bystanders from collateral consequences.",
+      "description": "Focused beam weapon that burns through everything in its path without discrimination. Designed for operations where witnesses are a liability and collateral damage is the point.",
       "manufacturer": "Night Censors",
       "yearOfManufacture": 2940,
       "stats": {
@@ -204,7 +204,7 @@
       "id": 1009,
       "name": "Spinal Tap",
       "category": "Heavy",
-      "description": "Aug-ripper cannon that tears implants from downed elites and mechs, converting stolen cyberware into temporary combat buffs for the wielder.",
+      "description": "Electromagnetic pulse cannon that overloads and fries implants, cyberware, and integrated electronics. Augmented targets suffer catastrophic system failures as their enhancements burn out from the inside.",
       "manufacturer": "Black Vein Syndicate",
       "yearOfManufacture": 2940,
       "stats": {
@@ -229,7 +229,7 @@
       "id": 1010,
       "name": "Ledger Taggun",
       "category": "Pistol",
-      "description": "Salvager's marking pistol that auto-tags high-value targets, increasing post-combat salvage yield from tagged kills.",
+      "description": "High-visibility marking pistol that paints targets with luminescent tracers. Tagged enemies take increased damage from all sources as the entire squad focuses fire on marked threats.",
       "manufacturer": "Harvest Guild",
       "yearOfManufacture": 2940,
       "stats": {
@@ -254,7 +254,7 @@
       "id": 1011,
       "name": "Tallyhook",
       "category": "Rifle",
-      "description": "Precision limb-targeting rifle with AI aim assist for disabling shots. Non-Destructive Fire mode preserves valuable salvage over lethality.",
+      "description": "Precision limb-targeting rifle with AI aim assist that tracks joints and mechanical linkages. Disabling shots cripple mobility and weapon handling, leaving enemies combat-ineffective without killing them outright.",
       "manufacturer": "Harvest Guild",
       "yearOfManufacture": 2940,
       "stats": {
@@ -279,7 +279,7 @@
       "id": 1012,
       "name": "Charon Rig",
       "category": "Heavy",
-      "description": "Recovery rig that strips usable components from battlefield wrecks during active combat, denying enemy salvage and reclamation attempts.",
+      "description": "Heavy thermite projector designed to completely destroy enemy equipment and deny battlefield assets. Fires streams of molten metal that reduces vehicles, mechs, and fortifications to molten slag.",
       "manufacturer": "Harvest Guild",
       "yearOfManufacture": 2940,
       "stats": {
@@ -429,7 +429,7 @@
       "id": 1018,
       "name": "Menagerie Pod",
       "category": "Heavy",
-      "description": "Bio-tactical deployment system that spawns AI-controlled combat beasts dynamically tuned to counter the local threat composition.",
+      "description": "Bio-adaptive cluster missile launcher that analyzes threat composition and deploys specialized submunitions. Fires swarms of micro-missiles optimized for flesh, armor, or mechanized targets based on battlefield conditions.",
       "manufacturer": "Chimera Protocol",
       "yearOfManufacture": 2940,
       "stats": {
@@ -579,7 +579,7 @@
       "id": 1024,
       "name": "Mesh Uplink",
       "category": "Heavy",
-      "description": "Street network tactical beacon that summons barricades, support drones, and militia reinforcements scaled to current PublicSupport levels.",
+      "description": "Network-coordinated grenade launcher that fires EMP cluster munitions synchronized through local infrastructure. Effectiveness scales with PublicSupport levels as civilian networks provide targeting data for devastating area saturation.",
       "manufacturer": "Undercurrent Union",
       "yearOfManufacture": 2940,
       "stats": {
@@ -654,7 +654,7 @@
       "id": 1027,
       "name": "Wartrain Pod",
       "category": "Heavy",
-      "description": "Mobile fire support beacon that calls in a drive-through armed convoy with suppressive turret fire and emergency auto-exfiltration.",
+      "description": "High-velocity missile pod launcher with strafing trajectory algorithms. Fires volleys of micro-missiles in sweeping patterns that mimic suppressive vehicle fire, creating devastating kill corridors for mobile warfare tactics.",
       "manufacturer": "Radial Swarm",
       "yearOfManufacture": 2940,
       "stats": {
@@ -679,7 +679,7 @@
       "id": 1028,
       "name": "Deposition",
       "category": "Pistol",
-      "description": "Intelligence-gathering sidearm that logs all kills for post-mission leverage, enabling credit and reputation manipulation.",
+      "description": "Silenced execution pistol with integrated biometric scanner. Rounds are encoded with target DNA data, making kills appear suspicious and generating investigation heat for enemy factions.",
       "manufacturer": "Nexus Archives",
       "yearOfManufacture": 2940,
       "stats": {
@@ -729,7 +729,7 @@
       "id": 1030,
       "name": "Edit Drone",
       "category": "Heavy",
-      "description": "Narrative-control support drone that redacts next warcrime or collateral incident. Destruction dumps all footage, triggering multi-faction hate spike.",
+      "description": "Deployable jamming drone launcher that creates electromagnetic dead zones, disabling enemy communications and surveillance systems. Destroyed drones emit a final burst that blinds all nearby electronic targeting systems.",
       "manufacturer": "Nexus Archives",
       "yearOfManufacture": 2940,
       "stats": {
