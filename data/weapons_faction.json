@@ -974,6 +974,31 @@
         "onCrit": "",
         "passive": ""
       }
+    },
+    {
+      "id": 1040,
+      "name": "Scorched Earth",
+      "category": "Heavy",
+      "description": "Tactical nuclear micromissile launcher that fires miniaturized warheads with devastating blast radius. Obliterates everything in the impact zone with extreme prejudice. Extreme collateral damage expected.",
+      "manufacturer": "Radial Swarm",
+      "yearOfManufacture": 2940,
+      "stats": {
+        "baseDamage": 200,
+        "critChance": 5,
+        "armorPenetration": 30,
+        "range": 150,
+        "projectileSpeed": 100,
+        "explosionRadius": 15,
+        "fireRate": 0.1,
+        "ammoType": "Ammo.MicroMissile",
+        "ammoPerShot": 1
+      },
+      "scripts": {
+        "onFire": "",
+        "onHit": "",
+        "onCrit": "",
+        "passive": ""
+      }
     }
   ]
 }
