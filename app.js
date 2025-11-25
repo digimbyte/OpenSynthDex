@@ -13,8 +13,29 @@ const imageCache = {};
 // Card cache to avoid recreating DOM elements
 const cardCache = new Map();
 
-// Cache buster for images - use timestamp on page load
-const cacheBuster = Date.now();
+// Cache buster for images - use a stable version per deployment
+// Only change this when you actually update the images
+const cacheBuster = '1.0.0';
+
+// Retry configuration for failed image loads
+const IMAGE_RETRY_CONFIG = {
+    maxRetries: 3,
+    initialDelay: 1000, // 1 second
+    maxDelay: 10000,    // 10 seconds
+    backoffMultiplier: 2
+};
+
+// Track retry counts for images
+const imageRetryCount = new Map();
+
+// Request throttling to avoid rate limits
+const IMAGE_LOAD_CONFIG = {
+    maxConcurrent: 6,    // Max parallel image loads
+    delayBetweenBatches: 100  // ms delay between batches
+};
+
+let activeImageLoads = 0;
+const imageLoadQueue = [];
 
 // Initialize the app
 async function init() {
@@ -276,8 +297,69 @@ async function checkImageExists(url) {
             imageCache[url] = false;
             resolve(false);
         };
+        // Don't add cache buster to check requests - we just need to know if it exists
         img.src = url;
     });
+}
+
+// Process the image load queue
+function processImageQueue() {
+    while (activeImageLoads < IMAGE_LOAD_CONFIG.maxConcurrent && imageLoadQueue.length > 0) {
+        const loadTask = imageLoadQueue.shift();
+        activeImageLoads++;
+        loadTask();
+    }
+}
+
+// Load image with retry logic for rate limiting
+function loadImageWithRetry(imgElement, url, retryCount = 0) {
+    // Queue the image load to throttle requests
+    imageLoadQueue.push(() => {
+        const retryKey = `${imgElement.id}-${url}`;
+        
+        imgElement.onload = () => {
+            // Success - clear any retry tracking
+            imageRetryCount.delete(retryKey);
+            activeImageLoads--;
+            // Process next item in queue
+            setTimeout(processImageQueue, IMAGE_LOAD_CONFIG.delayBetweenBatches);
+        };
+        
+        imgElement.onerror = () => {
+            const currentRetries = imageRetryCount.get(retryKey) || 0;
+            
+            if (currentRetries < IMAGE_RETRY_CONFIG.maxRetries) {
+                // Calculate exponential backoff delay
+                const delay = Math.min(
+                    IMAGE_RETRY_CONFIG.initialDelay * Math.pow(IMAGE_RETRY_CONFIG.backoffMultiplier, currentRetries),
+                    IMAGE_RETRY_CONFIG.maxDelay
+                );
+                
+                imageRetryCount.set(retryKey, currentRetries + 1);
+                
+                console.log(`Retrying image load (${currentRetries + 1}/${IMAGE_RETRY_CONFIG.maxRetries}) for ${url} after ${delay}ms`);
+                
+                // Retry after delay
+                setTimeout(() => {
+                    // Remove cache buster and try again (in case it was a cache issue)
+                    const cleanUrl = url.split('?')[0];
+                    imgElement.src = cleanUrl;
+                }, delay);
+            } else {
+                // Max retries reached
+                console.warn(`Failed to load image after ${IMAGE_RETRY_CONFIG.maxRetries} retries: ${url}`);
+                imageRetryCount.delete(retryKey);
+                activeImageLoads--;
+                // Process next item in queue
+                setTimeout(processImageQueue, IMAGE_LOAD_CONFIG.delayBetweenBatches);
+            }
+        };
+        
+        imgElement.src = url;
+    });
+    
+    // Start processing queue
+    processImageQueue();
 }
 
 // Create weapon card (synchronous, without images)
@@ -358,7 +440,7 @@ async function updateManufacturerBanner(manufacturer) {
     const exists = await checkImageExists(iconPath);
 
     if (exists) {
-        bannerImg.src = `${iconPath}?v=${cacheBuster}`;
+        loadImageWithRetry(bannerImg, `${iconPath}?v=${cacheBuster}`);
         bannerImg.style.display = 'block';
         if (bannerX) bannerX.style.display = 'none';
     } else {
@@ -384,7 +466,7 @@ async function loadManufacturerIcon(weapon) {
     const exists = await checkImageExists(iconPath);
     
     if (exists) {
-        iconImg.src = `${iconPath}?v=${cacheBuster}`;
+        loadImageWithRetry(iconImg, `${iconPath}?v=${cacheBuster}`);
         iconImg.classList.remove('placeholder');
     } else {
         // Show X for missing icon
@@ -409,7 +491,7 @@ async function loadWeaponImages(weapon) {
     if (!img) return; // Card may have been removed
     
     if (currentImage) {
-        img.src = `${currentImage}?v=${cacheBuster}`;
+        loadImageWithRetry(img, `${currentImage}?v=${cacheBuster}`);
         img.classList.remove('placeholder');
     } else {
         // Add missing image indicator
@@ -475,7 +557,7 @@ async function findImageVariants(weaponName) {
 function switchVariant(weaponId, variantIndex, filename) {
     const img = document.getElementById(`img-${weaponId}`);
     if (img) {
-        img.src = `${filename}?v=${cacheBuster}`;
+        loadImageWithRetry(img, `${filename}?v=${cacheBuster}`);
     }
     
     // Update active dot
@@ -494,7 +576,7 @@ function switchVariant(weaponId, variantIndex, filename) {
 function switchModalVariant(weaponId, variantIndex, filename) {
     const img = document.getElementById(`modal-img-${weaponId}`);
     if (img) {
-        img.src = `${filename}?v=${cacheBuster}`;
+        loadImageWithRetry(img, `${filename}?v=${cacheBuster}`);
     }
     
     // Update active button
@@ -552,7 +634,7 @@ async function openModal(weapon) {
     const currentImage = variants.length > 0 ? variants[0].filename : null;
     
     const imageHTML = currentImage ?
-        `<img src="${currentImage}?v=${cacheBuster}" alt="${weapon.name}" class="modal-weapon-image" id="modal-img-${weapon.id}">` :
+        `<img src="" alt="${weapon.name}" class="modal-weapon-image" id="modal-img-${weapon.id}">` :
         `<div style="font-size: 120px;">🔫</div>`;
     
     // Generate skin swapper controls if multiple variants exist
@@ -606,7 +688,7 @@ async function openModal(weapon) {
     const mfrIconPath = generateManufacturerIconPath(weapon.manufacturer);
     const mfrIconExists = await checkImageExists(mfrIconPath);
     const mfrIconHTML = mfrIconExists ?
-        `<img src="${mfrIconPath}?v=${cacheBuster}" class="modal-manufacturer-icon" alt="${weapon.manufacturer}">` :
+        `<img src="" class="modal-manufacturer-icon" id="modal-mfr-icon-${weapon.id}" alt="${weapon.manufacturer}">` :
         '🏢';
     
     modalBody.innerHTML = `
@@ -689,6 +771,21 @@ async function openModal(weapon) {
     `;
     
     modal.style.display = 'flex';
+    
+    // Load images with retry after modal is displayed
+    if (currentImage) {
+        const modalImg = document.getElementById(`modal-img-${weapon.id}`);
+        if (modalImg) {
+            loadImageWithRetry(modalImg, `${currentImage}?v=${cacheBuster}`);
+        }
+    }
+    
+    if (mfrIconExists) {
+        const mfrIconImg = document.getElementById(`modal-mfr-icon-${weapon.id}`);
+        if (mfrIconImg) {
+            loadImageWithRetry(mfrIconImg, `${mfrIconPath}?v=${cacheBuster}`);
+        }
+    }
 }
 
 // Close modal
