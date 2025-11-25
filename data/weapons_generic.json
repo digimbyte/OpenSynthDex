@@ -363,7 +363,7 @@
     {
       "id": 101,
       "name": "Sentinel-9 Service Pistol",
-      "category": "pistols",
+      "category": "Pistol",
       "description": "Standard-issue 9mm sidearm for corporate security teams and privatized police forces. Reliable, boring, always there when a manager needs someone shot.",
       "manufacturer": "Arclight Defense",
       "yearOfManufacture": 2708,
@@ -390,7 +390,7 @@
     {
       "id": 102,
       "name": "Strix-45 Compact",
-      "category": "pistols",
+      "category": "Pistol",
       "description": "Compact suppressed .45 pistol favored by internal audit teams and deniable assets. Vanishes under a cheap suit and keeps the paperwork light.",
       "manufacturer": "Strix Industries",
       "yearOfManufacture": 2721,
@@ -417,7 +417,7 @@
     {
       "id": 103,
       "name": "Ironstar .44",
-      "category": "pistols",
+      "category": "Pistol",
       "description": "Overbuilt heavy revolver designed to remind people that promotions are never guaranteed. Breaks elite body armor and weaker wrists.",
       "manufacturer": "Ironstar Forge",
       "yearOfManufacture": 2712,
@@ -444,7 +444,7 @@
     {
       "id": 104,
       "name": "Arcline Taser Pistol",
-      "category": "pistols",
+      "category": "Pistol",
       "description": "Short-range taser pistol used for captures, PR-friendly raids, and staged arrests for the evening news.",
       "manufacturer": "Arcline Compliance",
       "yearOfManufacture": 2730,
@@ -471,7 +471,7 @@
     {
       "id": 105,
       "name": "Warden-19 Machine Pistol",
-      "category": "pistols",
+      "category": "Pistol",
       "description": "Compact automatic sidearm for bodyguards who expect trouble in the elevator and the boardroom.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2725,
@@ -498,7 +498,7 @@
     {
       "id": 106,
       "name": "Nomad-10 PDW Pistol",
-      "category": "pistols",
+      "category": "Pistol",
       "description": "Stockless PDW tuned for vehicle crews and recon squads. More bite than a regular pistol, less bulk than a real rifle.",
       "manufacturer": "Kestrel Dynamics",
       "yearOfManufacture": 2742,
@@ -525,7 +525,7 @@
     {
       "id": 107,
       "name": "Medica-7 Injector",
-      "category": "pistols",
+      "category": "Pistol",
       "description": "Dart injector used by field medics and deniable biotech teams. Heals allies, quietly ruins evidence on enemies.",
       "manufacturer": "Medica Labs",
       "yearOfManufacture": 2738,
@@ -552,7 +552,7 @@
     {
       "id": 108,
       "name": "Voltline-22 EMP Pistol",
-      "category": "pistols",
+      "category": "Pistol",
       "description": "Short-range EMP sidearm used by tech squads to shut down drones, turrets and smart-lock doors before they start screaming.",
       "manufacturer": "Voltline Systems",
       "yearOfManufacture": 2750,
@@ -579,7 +579,7 @@
     {
       "id": 201,
       "name": "Kestrel PD-4",
-      "category": "compact",
+      "category": "Compact",
       "description": "Light PDW designed for fast entries and rushing stairwells before anyone can lock the doors.",
       "manufacturer": "Kestrel Dynamics",
       "yearOfManufacture": 2729,
@@ -606,7 +606,7 @@
     {
       "id": 202,
       "name": "Hailstorm-9",
-      "category": "compact",
+      "category": "Compact",
       "description": "High-rate SMG tuned to fill narrow corridors with so much lead that nobody argues about who owns the floor.",
       "manufacturer": "Cascade Arsenal",
       "yearOfManufacture": 2735,
@@ -633,7 +633,7 @@
     {
       "id": 203,
       "name": "Streetline Mk.3",
-      "category": "compact",
+      "category": "Compact",
       "description": "Cheap stamped-metal SMG flooding back-alley workshops and disposable street crews. Malfunctions more than legal counsel.",
       "manufacturer": "Streetline Fabrication",
       "yearOfManufacture": 2718,
@@ -660,7 +660,7 @@
     {
       "id": 204,
       "name": "Whisper-M7",
-      "category": "compact",
+      "category": "Compact",
       "description": "Integrally suppressed SMG for black-bag teams who need to erase a room without waking the rest of the tower.",
       "manufacturer": "Strix Industries",
       "yearOfManufacture": 2744,
@@ -687,7 +687,7 @@
     {
       "id": 205,
       "name": "Tempest-11 Hybrid",
-      "category": "compact",
+      "category": "Compact",
       "description": "Armor-leaning SMG running high-velocity ammo. Built for sweeping armored escorts off the street at uncomfortable distances.",
       "manufacturer": "Tempest-Tech",
       "yearOfManufacture": 2756,
@@ -714,7 +714,7 @@
     {
       "id": 206,
       "name": "Riotweave SMG",
-      "category": "compact",
+      "category": "Compact",
       "description": "Selectable lethal and non-lethal SMG used by riot teams, crowd control units, and anyone who needs the footage to look civil.",
       "manufacturer": "Riotweave Solutions",
       "yearOfManufacture": 2760,
@@ -741,7 +741,7 @@
     {
       "id": 207,
       "name": "Ranger-S PDW",
-      "category": "compact",
+      "category": "Compact",
       "description": "Long-barrel PDW tuned for street patrols and escort convoys where trouble starts at the far end of the block.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2748,
@@ -768,7 +768,7 @@
     {
       "id": 208,
       "name": "Ghostline Micro-SMG",
-      "category": "compact",
+      "category": "Compact",
       "description": "Concealable submachine gun disguised as an accessory piece. Popular with undercover agents and executives who expect a hostile buyout.",
       "manufacturer": "Ghostline Labs",
       "yearOfManufacture": 2773,
@@ -795,7 +795,7 @@
     {
       "id": 301,
       "name": "Cobalt-556 Carbine",
-      "category": "assault",
+      "category": "Assault",
       "description": "Baseline 5.56 carbine issued to contract troops, private militias and anyone who signs the right liability waiver.",
       "manufacturer": "Cascade Arsenal",
       "yearOfManufacture": 2719,
@@ -822,7 +822,7 @@
     {
       "id": 302,
       "name": "Hydra-73 Modular AR",
-      "category": "assault",
+      "category": "Assault",
       "description": "Modular rifle platform sold as a \"lifetime solution\" to agencies that change doctrine every quarter.",
       "manufacturer": "Hydra Systems",
       "yearOfManufacture": 2765,
@@ -849,7 +849,7 @@
     {
       "id": 303,
       "name": "Bastion-762",
-      "category": "assault",
+      "category": "Assault",
       "description": "7.62 carbine with more recoil than sense. Issued to anchor units who are expected to stay put and break anything that moves.",
       "manufacturer": "Bastion Arms",
       "yearOfManufacture": 2728,
@@ -876,7 +876,7 @@
     {
       "id": 304,
       "name": "Fluxline G3 Caseless",
-      "category": "assault",
+      "category": "Assault",
       "description": "Caseless rifle built to dump rounds in urban alleys and then melt itself if budget cuts ignore maintenance.",
       "manufacturer": "Fluxline Armories",
       "yearOfManufacture": 2782,
@@ -903,7 +903,7 @@
     {
       "id": 305,
       "name": "Patrol-5 Carbine",
-      "category": "assault",
+      "category": "Assault",
       "description": "Lightweight patrol rifle built for long shifts, long streets, and longer reports afterwards.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2715,
@@ -930,7 +930,7 @@
     {
       "id": 306,
       "name": "Urbanite-300 \"Shorty\"",
-      "category": "assault",
+      "category": "Assault",
       "description": "Chopped-down rifle optimized for cramped stairs, cheap motels and office cubicle raids.",
       "manufacturer": "Urbanite Arms",
       "yearOfManufacture": 2790,
@@ -957,7 +957,7 @@
     {
       "id": 307,
       "name": "Sentinel-AR \"Linewatch\"",
-      "category": "assault",
+      "category": "Assault",
       "description": "Optics-integrated rifle designed for perimeter guards who get paid to stare down long streets and look dangerous on cameras.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2739,
@@ -984,7 +984,7 @@
     {
       "id": 308,
       "name": "Cascade-545",
-      "category": "assault",
+      "category": "Assault",
       "description": "High-capacity 5.45 rifle used to arm conscripts, \"volunteers\" and anyone else too cheap to train properly.",
       "manufacturer": "Cascade Arsenal",
       "yearOfManufacture": 2723,
@@ -1011,7 +1011,7 @@
     {
       "id": 401,
       "name": "Longview-10",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Semi-auto DMR for rooftop watchers and patient operators. Built to keep street protests at a safe distance.",
       "manufacturer": "Ridgepoint Tactical",
       "yearOfManufacture": 2717,
@@ -1038,7 +1038,7 @@
     {
       "id": 402,
       "name": "Marksman-12 \"Spire\"",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Heavy-barrel DMR used to lock down long lanes between high-rises and elevated walkways.",
       "manufacturer": "Ridgepoint Tactical",
       "yearOfManufacture": 2731,
@@ -1065,7 +1065,7 @@
     {
       "id": 403,
       "name": "Harrow-308",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Mid-range battle rifle tuned to punish elites and shield lines that think distance is enough.",
       "manufacturer": "Ironstar Forge",
       "yearOfManufacture": 2722,
@@ -1092,7 +1092,7 @@
     {
       "id": 404,
       "name": "Ridge-20 Scout Rifle",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Light DMR issued to recon units expected to tag threats and stay alive long enough to report them.",
       "manufacturer": "Ridgepoint Tactical",
       "yearOfManufacture": 2740,
@@ -1119,7 +1119,7 @@
     {
       "id": 405,
       "name": "Bastion-D \"Designate\"",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Semi-auto variant of the Bastion platform for deliberate, slow fire on priority targets.",
       "manufacturer": "Bastion Arms",
       "yearOfManufacture": 2752,
@@ -1146,7 +1146,7 @@
     {
       "id": 406,
       "name": "Linebreaker-35",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Heavy battle rifle intended to tear apart barricades and improvised cover faster than crowds can build them.",
       "manufacturer": "Ironstar Forge",
       "yearOfManufacture": 2767,
@@ -1173,7 +1173,7 @@
     {
       "id": 407,
       "name": "Vantage-21",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Hybrid DMR bridging assault rifles and true sniper rifles for squads that can’t decide what they are.",
       "manufacturer": "Ridgepoint Tactical",
       "yearOfManufacture": 2779,
@@ -1200,7 +1200,7 @@
     {
       "id": 408,
       "name": "Skystepper Mk.II",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "DMR with integrated rangefinding suite, used to own long boulevard sightlines and open plazas.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2788,
@@ -1227,7 +1227,7 @@
     {
       "id": 409,
       "name": "Needle SR-1",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Light sniper rifle deployed for \"behavior correction\" at distances too far for witnesses to swear on.",
       "manufacturer": "Ridgepoint Tactical",
       "yearOfManufacture": 2720,
@@ -1254,7 +1254,7 @@
     {
       "id": 410,
       "name": "Lancer AMR-50",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Anti-materiel rifle that treats thin walls and light vehicles as suggestions rather than obstacles.",
       "manufacturer": "Ironstar Forge",
       "yearOfManufacture": 2733,
@@ -1281,7 +1281,7 @@
     {
       "id": 411,
       "name": "Whisperline S2",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Suppressed sniper rifle for quiet decapitations of leadership and their replacement the next shift.",
       "manufacturer": "Strix Industries",
       "yearOfManufacture": 2762,
@@ -1308,7 +1308,7 @@
     {
       "id": 412,
       "name": "Prism-14",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Semi-auto sniper built for urban counter-sniper work and erasing marked threats the second they lean out.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2770,
@@ -1335,7 +1335,7 @@
     {
       "id": 413,
       "name": "Longhook 338",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Heavy precision rifle used to watch entire districts from a comfortable rooftop and ruin whoever steps into the wrong window.",
       "manufacturer": "Ridgepoint Tactical",
       "yearOfManufacture": 2785,
@@ -1362,7 +1362,7 @@
     {
       "id": 414,
       "name": "Ghostline-X (Generic)",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Prototype rifle using soft-spectrum imaging data to punch through thin walls when the rest of the floor plan is redacted.",
       "manufacturer": "Ghostline Labs",
       "yearOfManufacture": 2946,
@@ -1389,7 +1389,7 @@
     {
       "id": 415,
       "name": "Spine-27",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Mid-power semi sniper carried by assault sharpshooters who prefer to stay with the push instead of babysitting antennas.",
       "manufacturer": "Ridgepoint Tactical",
       "yearOfManufacture": 2794,
@@ -1416,7 +1416,7 @@
     {
       "id": 416,
       "name": "Surveyor-09",
-      "category": "snipers",
+      "category": "Sniper",
       "description": "Sniper rifle with an integrated spotter scope to tag targets and turn the whole squad into a firing line.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2802,
@@ -1443,7 +1443,7 @@
     {
       "id": 501,
       "name": "Brick-12 Pump",
-      "category": "shotguns",
+      "category": "Shotgun",
       "description": "Heavy pump shotgun that doubles as a breaching tool and an HR solution at close range.",
       "manufacturer": "Ironstar Forge",
       "yearOfManufacture": 2714,
@@ -1470,7 +1470,7 @@
     {
       "id": 502,
       "name": "Scatter-8 Auto",
-      "category": "shotguns",
+      "category": "Shotgun",
       "description": "Semi-auto shotgun built to turn small rooms into redacted crime scenes in under a second.",
       "manufacturer": "Cascade Arsenal",
       "yearOfManufacture": 2727,
@@ -1497,7 +1497,7 @@
     {
       "id": 503,
       "name": "Thundercone-10",
-      "category": "shotguns",
+      "category": "Shotgun",
       "description": "Drum-fed shotgun able to drown riot lines in stagger rounds or buckshot, depending on who's watching.",
       "manufacturer": "Riotweave Solutions",
       "yearOfManufacture": 2768,
@@ -1524,7 +1524,7 @@
     {
       "id": 504,
       "name": "StreetSaw-6",
-      "category": "shotguns",
+      "category": "Shotgun",
       "description": "Sawed-off shotgun for close-quarters murders that still need to fit inside a briefcase.",
       "manufacturer": "Streetline Fabrication",
       "yearOfManufacture": 2736,
@@ -1551,7 +1551,7 @@
     {
       "id": 505,
       "name": "Breacher-90 Bullpup",
-      "category": "shotguns",
+      "category": "Shotgun",
       "description": "Compact bullpup shotgun intended to sit behind riot shields and keep them feeling relevant.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2746,
@@ -1578,7 +1578,7 @@
     {
       "id": 506,
       "name": "Hammerfall-4 Slug Gun",
-      "category": "shotguns",
+      "category": "Shotgun",
       "description": "Slug-throwing shotgun that acts more like a pocket cannon against light vehicles and walking hardware.",
       "manufacturer": "Ironstar Forge",
       "yearOfManufacture": 2758,
@@ -1605,7 +1605,7 @@
     {
       "id": 507,
       "name": "Cloudburst Foamgun",
-      "category": "shotguns",
+      "category": "Shotgun",
       "description": "Foam projector shotgun used to glue crowds, doorways and sometimes entire protest lines to the pavement.",
       "manufacturer": "Riotweave Solutions",
       "yearOfManufacture": 2805,
@@ -1632,7 +1632,7 @@
     {
       "id": 508,
       "name": "Emberflare-12 Incendiary",
-      "category": "shotguns",
+      "category": "Shotgun",
       "description": "Incendiary shell shotgun used to seal doors, clear choke points and make evacuation routes theoretical.",
       "manufacturer": "Helios Corp",
       "yearOfManufacture": 2813,
@@ -1659,7 +1659,7 @@
     {
       "id": 601,
       "name": "Rampart-249",
-      "category": "special",
+      "category": "Special",
       "description": "5.56 LMG built to keep heads down and keep street cameras full of muzzle flash.",
       "manufacturer": "Cascade Arsenal",
       "yearOfManufacture": 2726,
@@ -1686,7 +1686,7 @@
     {
       "id": 602,
       "name": "Maelstrom-762",
-      "category": "special",
+      "category": "Special",
       "description": "7.62 GPMG that chews light cover, crowd banners and squad morale with equal enthusiasm.",
       "manufacturer": "Maelstrom Engineering",
       "yearOfManufacture": 2734,
@@ -1713,7 +1713,7 @@
     {
       "id": 603,
       "name": "Cycler-X Rotary",
-      "category": "special",
+      "category": "Special",
       "description": "Light rotary LMG designed to erase swarms of lightly armored bodies as quickly as the board can sign the contract.",
       "manufacturer": "Maelstrom Engineering",
       "yearOfManufacture": 2789,
@@ -1740,7 +1740,7 @@
     {
       "id": 604,
       "name": "Outpost-98",
-      "category": "special",
+      "category": "Special",
       "description": "Squad automatic rifle variant for fast-moving assault teams who still need suppression on tap.",
       "manufacturer": "Cascade Arsenal",
       "yearOfManufacture": 2769,
@@ -1767,7 +1767,7 @@
     {
       "id": 605,
       "name": "Bastion-L Support",
-      "category": "special",
+      "category": "Special",
       "description": "Support LMG variant of the Bastion platform used to anchor intersections and long industrial corridors.",
       "manufacturer": "Bastion Arms",
       "yearOfManufacture": 2791,
@@ -1794,7 +1794,7 @@
     {
       "id": 606,
       "name": "Highway-73",
-      "category": "special",
+      "category": "Special",
       "description": "Heavy LMG cleared for human use but clearly designed with vehicle pintle mounts in mind.",
       "manufacturer": "Maelstrom Engineering",
       "yearOfManufacture": 2800,
@@ -1821,7 +1821,7 @@
     {
       "id": 607,
       "name": "Hailbarrel-66",
-      "category": "special",
+      "category": "Special",
       "description": "Box-fed LMG tuned for savage short bursts that either break an assault or run the gun dry.",
       "manufacturer": "Cascade Arsenal",
       "yearOfManufacture": 2810,
@@ -1848,7 +1848,7 @@
     {
       "id": 608,
       "name": "Sentinel-SAW",
-      "category": "special",
+      "category": "Special",
       "description": "Squad automatic variant of the Sentinel rifle, cheaper than full LMGs and easier to justify on balance sheets.",
       "manufacturer": "Sentinel Works",
       "yearOfManufacture": 2821,
@@ -1875,7 +1875,7 @@
     {
       "id": 701,
       "name": "RGL-40 Grenade Launcher",
-      "category": "rockets",
+      "category": "Special",
       "description": "Single-shot 40mm launcher used for everything from street clearing to \"accidental\" gas deployments.",
       "manufacturer": "Arclight Defense",
       "yearOfManufacture": 2724,
@@ -1902,7 +1902,7 @@
     {
       "id": 702,
       "name": "Raptor RPG-7N",
-      "category": "rockets",
+      "category": "Special",
       "description": "Shoulder-fired rocket launcher used to terminate vehicles, stubborn barricades, and contracts.",
       "manufacturer": "Ironstar Forge",
       "yearOfManufacture": 2737,
@@ -1929,7 +1929,7 @@
     {
       "id": 703,
       "name": "Strix ML-3 Micromissile",
-      "category": "rockets",
+      "category": "Special",
       "description": "Three-tube micromissile launcher used to swat drones, light transports and anyone unlucky enough to be tagged first.",
       "manufacturer": "Strix Industries",
       "yearOfManufacture": 2855,
@@ -1956,7 +1956,7 @@
     {
       "id": 609,
       "name": "Pyrethrower-6",
-      "category": "special",
+      "category": "Special",
       "description": "Industrial flamethrower repurposed for bunker clearing, trench denial and quiet union negotiations.",
       "manufacturer": "Helios Corp",
       "yearOfManufacture": 2889,
@@ -1983,7 +1983,7 @@
     {
       "id": 801,
       "name": "ArcStorm Tesla Rifle",
-      "category": "beam",
+      "category": "Assault",
       "description": "Arc weapon designed to crawl electricity through clustered units and remind mechs who's actually plugged in.",
       "manufacturer": "Voltline Systems",
       "yearOfManufacture": 2911,
@@ -2010,7 +2010,7 @@
     {
       "id": 62,
       "name": "Helios-1 Laser Carbine",
-      "category": "beam",
+      "category": "Assault",
       "description": "Medium-power laser carbine designed for precise removal of drones, sensors and rooftop marksmen.",
       "manufacturer": "Helios Corp",
       "yearOfManufacture": 2932,
@@ -2037,7 +2037,7 @@
     {
       "id": 63,
       "name": "Manifold Coilgun",
-      "category": "beam",
+      "category": "Assault",
       "description": "Micro-coil rifle firing accelerated slugs that make a joke of cubicle walls and light armor.",
       "manufacturer": "Manifold Dynamics",
       "yearOfManufacture": 2944,
@@ -2064,7 +2064,7 @@
     {
       "id": 64,
       "name": "Ward-EMP Projector",
-      "category": "special",
+      "category": "Special",
       "description": "Short-range EMP projector used to blackout security clusters, door networks and autonomous patrols in one ugly pulse.",
       "manufacturer": "Ward Systems",
       "yearOfManufacture": 2953,
