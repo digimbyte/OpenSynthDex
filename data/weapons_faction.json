@@ -28,7 +28,7 @@
     {
       "id": 1002,
       "name": "AR-99 TaseLine",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Adaptive compliance rifle with AI-driven ammo cycling between lethal, shock, and EMP rounds based on target classification. Toggle Compliance Mode for non-lethal reputation gains.",
       "manufacturer": "Pillar Ascendancy",
       "yearOfManufacture": 2940,
@@ -103,7 +103,7 @@
     {
       "id": 1005,
       "name": "Inquest-7",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Scan rifle with X-ray cone that reveals units through walls. First shot against revealed targets ignores their cover.",
       "manufacturer": "Night Censors",
       "yearOfManufacture": 2940,
@@ -178,7 +178,7 @@
     {
       "id": 1008,
       "name": "Reaver's Coil",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Neurolock-inducing assault rifle where sustained fire applies cumulative slow and stagger effects to targets' augmented nervous systems.",
       "manufacturer": "Black Vein Syndicate",
       "yearOfManufacture": 2940,
@@ -253,7 +253,7 @@
     {
       "id": 1011,
       "name": "Tallyhook",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Precision limb-targeting rifle with AI aim assist that tracks joints and mechanical linkages. Disabling shots cripple mobility and weapon handling, leaving enemies combat-ineffective without killing them outright.",
       "manufacturer": "Harvest Guild",
       "yearOfManufacture": 2940,
@@ -328,7 +328,7 @@
     {
       "id": 1014,
       "name": "Tremorgut",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Corrosive spore launcher that creates persistent acid pools after clustered hits, denying terrain and melting through armor over time.",
       "manufacturer": "Rust Communion",
       "yearOfManufacture": 2940,
@@ -403,7 +403,7 @@
     {
       "id": 1017,
       "name": "SpliceCaster",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Morphic weapon that adapts ammunition based on target types - fire bile for flesh, spike piercers for armor, acid webs for mechs and drones.",
       "manufacturer": "Chimera Protocol",
       "yearOfManufacture": 2940,
@@ -478,7 +478,7 @@
     {
       "id": 1020,
       "name": "Wardnet",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Defensive combat rifle that projects temporary hardlight cover arcs when firing from existing cover, reinforcing defensive positions.",
       "manufacturer": "Glass Harbor Collective",
       "yearOfManufacture": 2940,
@@ -553,7 +553,7 @@
     {
       "id": 1023,
       "name": "Grail-31",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Momentum-building combat rifle where consecutive hits stack accuracy and damage reduction bonuses, rewarding sustained pressure.",
       "manufacturer": "Undercurrent Union",
       "yearOfManufacture": 2940,
@@ -628,7 +628,7 @@
     {
       "id": 1026,
       "name": "Roadbreaker",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "High-velocity pursuit rifle where kills while moving grant cumulative sprint and reload speed bonuses for aggressive chase tactics.",
       "manufacturer": "Radial Swarm",
       "yearOfManufacture": 2940,
@@ -703,7 +703,7 @@
     {
       "id": 1029,
       "name": "Angleshot",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Smart-ricochet rifle with AI ballistics that calculates single-bounce trajectories to break line-of-sight and hit targets around corners.",
       "manufacturer": "Nexus Archives",
       "yearOfManufacture": 2940,
@@ -778,7 +778,7 @@
     {
       "id": 1032,
       "name": "Cantor Array",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Temporal echo rifle that replays each burst 0.5 seconds later along the same fire vector, effectively doubling damage output.",
       "manufacturer": "Proxy Choir",
       "yearOfManufacture": 2940,
@@ -853,7 +853,7 @@
     {
       "id": 1035,
       "name": "Vectorline",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Behavioral manipulation rifle where bullets apply invisible navigation bias, subtly herding enemies into prepared killzones.",
       "manufacturer": "HelioCrypt Overmind",
       "yearOfManufacture": 2940,
@@ -928,7 +928,7 @@
     {
       "id": 1038,
       "name": "Oathline",
-      "category": "Rifle",
+      "category": "Assault",
       "description": "Kill-lane projection rifle that creates a neutralizing corridor where AI abilities, remote-controlled projectiles, and drones cease functioning.",
       "manufacturer": "Null Sanctum",
       "yearOfManufacture": 2940,
