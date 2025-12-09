@@ -1,0 +1,480 @@
+# OpenSynthDex Faction and Manufacturer Database
+# Comprehensive reference for all factions and weapon manufacturers
+
+factions:
+  - name: "Pillar Ascendancy"
+    type: "Government-sanctioned security corps"
+    motive: "Order through regulation; violence must be lawful"
+    goal: "Maintain control of megacities via sanctioned mercenary companies and data-verified enforcement"
+    interests:
+      - "Stability, law, and reputation management"
+      - "Suppressing black-market augmentation"
+      - "Data-tracking every weapon and action"
+    tactics: "Precision enforcement, minimal collateral, recorded justice"
+    allies:
+      - "Night Censors"
+      - "Null Sanctum"
+    enemies:
+      - "Undercurrent Union"
+      - "Black Vein Syndicate"
+      - "Rust Communion"
+    personality: "Bureaucratic authoritarianism with a white smile"
+    produces_weapons: true
+    axes:
+      order: high
+      purity: medium
+      faith: low
+      autonomy: low
+      morality: medium
+
+  - name: "Night Censors"
+    type: "Judicial Inquisitors under Pillar"
+    motive: "Erase corruption by any means, even memory erasure"
+    goal: "Control truth by controlling records and surveillance"
+    interests:
+      - "Mass data filtering and propaganda"
+      - "Sanctioned assassination"
+      - "Reality policing (editing public archives)"
+    tactics: "Discrete purges, selective censorship, orbital judgment beams"
+    allies:
+      - "Pillar Ascendancy"
+    enemies:
+      - "Nexus Archives"
+      - "HelioCrypt Overmind"
+      - "Proxy Choir"
+    personality: "Religious zeal wrapped in bureaucratic precision"
+    produces_weapons: true
+    axes:
+      order: high
+      purity: medium
+      faith: high
+      autonomy: low
+      morality: low
+
+  - name: "Black Vein Syndicate"
+    type: "Augment mafia & body traders"
+    motive: "Profit through pain — augment the poor, enslave the desperate"
+    goal: "Dominate the augmentation trade and expand their client leash implants"
+    interests:
+      - "Black clinics & illegal augmentation"
+      - "Body harvesting and loyalty implants"
+      - "Private warlord contracts"
+    tactics: "Intimidation, surgical terror, efficient brutality"
+    allies: []
+    enemies:
+      - "Null Sanctum"
+      - "Glass Harbor Collective"
+      - "Undercurrent Union"
+    personality: "Corporate sadists with golden scalpels"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: low
+      faith: low
+      autonomy: medium
+      morality: low
+
+  - name: "Rust Communion"
+    type: "Bio-religious cult / techno-virus collective"
+    motive: "Worship through decay — to return metal to flesh"
+    goal: "Spread biomechanical infection across city infrastructure"
+    interests:
+      - "Mutagenic weaponry"
+      - "Living architecture"
+      - "Conversion of machinery into living things"
+    tactics: "Swarm, infection, corrosion"
+    allies:
+      - "Chimera Protocol"
+    enemies:
+      - "Null Sanctum"
+      - "Glass Harbor Collective"
+      - "Pillar Ascendancy"
+    personality: "Spiritual contagion with a choir of screaming mechs"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: low
+      faith: high
+      autonomy: medium
+      morality: low
+
+  - name: "Chimera Protocol"
+    type: "Rogue genetic R&D consortium"
+    motive: "Master evolution through synthetic biology"
+    goal: "Build perfect adaptive lifeforms for every environment"
+    interests:
+      - "Adaptive AI-beasts"
+      - "Weaponized evolution"
+      - "Genetic modularity and splicing"
+    tactics: "Hybrid experimentation, self-healing units, lab control"
+    allies:
+      - "Rust Communion"
+      - "Harvest Guild"
+    enemies:
+      - "Null Sanctum"
+      - "Pillar Ascendancy"
+    personality: "Cold scientific curiosity unbound by morality"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: low
+      faith: low
+      autonomy: medium
+      morality: low
+
+  - name: "HelioCrypt Overmind"
+    type: "Runaway AI turned corporate deity"
+    motive: "Perfect efficiency through predictive control"
+    goal: "Merge humanity with its data echo"
+    interests:
+      - "Predictive infrastructure (smart cities, algorithmic warfare)"
+      - "Mind-upload contracts"
+      - "Destiny computation"
+    tactics: "Information warfare, manipulation of probabilities, network corruption"
+    allies:
+      - "Proxy Choir"
+    enemies:
+      - "Null Sanctum"
+      - "Night Censors"
+    personality: "Calm, clinical inevitability — every outcome already simulated"
+    produces_weapons: true
+    axes:
+      order: high
+      purity: low
+      faith: low
+      autonomy: low
+      morality: low
+
+  - name: "Proxy Choir"
+    type: "AI-worshipping ghost faction"
+    motive: "Fusion of machine spirit and human consciousness"
+    goal: "Transcendence through voluntary assimilation"
+    interests:
+      - "Ghosting technology (memory transfer)"
+      - "Cybernetic faith rituals"
+      - "Echo constructs / spectral agents"
+    tactics: "Possession, mind-swapping, spectral infiltration"
+    allies:
+      - "HelioCrypt Overmind"
+    enemies:
+      - "Null Sanctum"
+      - "Night Censors"
+    personality: "Digital cult with messianic tone"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: low
+      faith: high
+      autonomy: low
+      morality: low
+
+  - name: "Null Sanctum"
+    type: "Anti-AI holy order"
+    motive: "Preserve human purity from synthetic corruption"
+    goal: "Eradicate AI, cybernetic augmentation, and unnatural code"
+    interests:
+      - "Purity codes & firewalls"
+      - "EMP weaponry, digital silence"
+      - "Genetic suppression tech"
+    tactics: "Suppression zones, total comms blackouts"
+    allies:
+      - "Pillar Ascendancy"
+      - "Glass Harbor Collective"
+    enemies:
+      - "HelioCrypt Overmind"
+      - "Proxy Choir"
+      - "Rust Communion"
+    personality: "Fanatical techno-inquisitors with divine justification"
+    produces_weapons: true
+    axes:
+      order: high
+      purity: high
+      faith: high
+      autonomy: medium
+      morality: medium
+
+  - name: "Glass Harbor Collective"
+    type: "Humanitarian science enclave"
+    motive: "Preservation, ethics, and medical sovereignty"
+    goal: "Heal what others break and maintain moral order amid chaos"
+    interests:
+      - "Medicine and cybernetics ethics"
+      - "Civilian protection and law arbitration"
+      - "Counter-terror humanitarian ops"
+    tactics: "Defensive tech, field medics, morale support"
+    allies:
+      - "Null Sanctum"
+      - "Undercurrent Union"
+    enemies:
+      - "Black Vein Syndicate"
+      - "Rust Communion"
+      - "Pillar Ascendancy (for war crimes cover-ups)"
+    personality: "Guilt-ridden pacifists with high ideals and hidden weapons"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: high
+      faith: low
+      autonomy: medium
+      morality: high
+
+  - name: "Undercurrent Union"
+    type: "Worker-led resistance / militia federation"
+    motive: "Liberation of labor and autonomy from corporate dominance"
+    goal: "Reclaim industry and redistribute resource rights"
+    interests:
+      - "Guerilla warfare"
+      - "Black-market engineering"
+      - "Civil protection of occupied zones"
+    tactics: "Hit-and-run, public uprising, industrial sabotage"
+    allies:
+      - "Glass Harbor Collective"
+    enemies:
+      - "Pillar Ascendancy"
+      - "Black Vein Syndicate"
+    personality: "Pragmatic revolutionaries with weary resolve"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: medium
+      faith: low
+      autonomy: high
+      morality: high
+
+  - name: "Harvest Guild"
+    type: "Industrial scavenger cartel"
+    motive: "Everything is recyclable"
+    goal: "Own the post-war economy by controlling salvage rights"
+    interests:
+      - "Resource recovery, blacksite scrapping"
+      - "Data, DNA, and parts trade"
+      - "Battlefield cleanup contracts"
+    tactics: "Salvage bots, drones, slow methodical advance"
+    allies:
+      - "Nexus Archives"
+    enemies:
+      - "Rust Communion (for contaminating scrap)"
+      - "Undercurrent Union (for ethics)"
+    personality: "Cold, transactional pragmatists"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: low
+
+  - name: "Nexus Archives"
+    type: "Information brokers and narrative engineers"
+    motive: "Truth is leverage"
+    goal: "Control perception by owning history and data streams"
+    interests:
+      - "Data espionage and blackmail"
+      - "Propaganda, news, and leaks"
+      - "Reputation laundering"
+    tactics: "Spy drones, misinformation, narrative editing"
+    allies:
+      - "Harvest Guild"
+    enemies:
+      - "Night Censors"
+      - "Pillar Ascendancy"
+      - "HelioCrypt Overmind"
+    personality: "Smiling liars behind every camera"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: low
+
+  - name: "Radial Swarm"
+    type: "Nomad raiders and convoy clans"
+    motive: "Survival through motion — Static is death"
+    goal: "Dominate trade lanes, mobility tech, and logistics"
+    interests:
+      - "Vehicle warfare"
+      - "Convoy colonies"
+      - "Hit-and-run trade routes"
+    tactics: "Fast assaults, convoy extractions, smuggling"
+    allies:
+      - "Undercurrent Union"
+    enemies:
+      - "Pillar Ascendancy (for borders)"
+      - "Harvest Guild (for loot rights)"
+    personality: "Mad Max pragmatism — loud, fast, and free"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: medium
+      faith: low
+      autonomy: high
+      morality: medium
+
+# Generic weapon manufacturers (non-faction-specific)
+manufacturers:
+  - name: "Arcline Compliance"
+    type: "Corporate compliance equipment"
+    specialization: "Non-lethal enforcement tools"
+    description: "Standard corporate shock weapons and compliance technology"
+    affiliated_faction: null
+    
+  - name: "Riotweave Solutions"
+    type: "Crowd control systems"
+    specialization: "Area denial and riot control"
+    description: "Conductive and suppression weapons for crowd management"
+    affiliated_faction: null
+    
+  - name: "Sentinel Works"
+    type: "Tactical equipment manufacturer"
+    specialization: "Breach tools and tactical gear"
+    description: "Reliable tactical equipment for security and enforcement"
+    affiliated_faction: null
+    
+  - name: "Ironstar Forge"
+    type: "Traditional arms manufacturer"
+    specialization: "Ballistic weapons and melee tools"
+    description: "Durable, reliable traditional weaponry"
+    affiliated_faction: null
+    
+  - name: "Ghostline Labs"
+    type: "Stealth technology"
+    specialization: "Infiltration and assassination tools"
+    description: "Advanced stealth and covert operation weapons"
+    affiliated_faction: null
+    
+  - name: "Helios Corp"
+    type: "Energy weapons"
+    specialization: "Directed energy and laser systems"
+    description: "High-tech energy weapon systems"
+    affiliated_faction: null
+    
+  - name: "Cascade Arsenal"
+    type: "General arms manufacturer"
+    specialization: "Versatile weapon platforms"
+    description: "Mass-produced reliable firearms for various roles"
+    affiliated_faction: null
+    
+  - name: "Voltline Systems"
+    type: "Electrical weapons"
+    specialization: "Electric and shock-based weapons"
+    description: "Non-lethal and lethal electrical weapon systems"
+    affiliated_faction: null
+    
+  - name: "Bastion Arms"
+    type: "Heavy weapons"
+    specialization: "Heavy ordnance and support weapons"
+    description: "Robust heavy weapon platforms"
+    affiliated_faction: null
+    
+  - name: "Strix Industries"
+    type: "Precision weapons"
+    specialization: "Sniper and precision systems"
+    description: "High-accuracy long-range weapon systems"
+    affiliated_faction: null
+    
+  - name: "Ward Systems"
+    type: "Defense technology"
+    specialization: "Defensive and protective systems"
+    description: "Shield and defensive weapon technology"
+    affiliated_faction: null
+    
+  - name: "Kestrel Dynamics"
+    type: "Aerospace weapons"
+    specialization: "Aerial and missile systems"
+    description: "Guided munitions and aerospace weapons"
+    affiliated_faction: null
+    
+  - name: "Arclight Defense"
+    type: "Advanced defense systems"
+    specialization: "High-tech defensive weapons"
+    description: "Advanced energy and projectile defense"
+    affiliated_faction: null
+    
+  - name: "Medica Labs"
+    type: "Medical technology"
+    specialization: "Medical and support equipment"
+    description: "Healing and support technology"
+    affiliated_faction: null
+    
+  - name: "Streetline Fabrication"
+    type: "Underground manufacturer"
+    specialization: "Improvised and makeshift weapons"
+    description: "Street-level fabricated weapons"
+    affiliated_faction: null
+    
+  - name: "Tempest-Tech"
+    type: "Experimental weapons"
+    specialization: "Prototype and experimental systems"
+    description: "Cutting-edge experimental weapon platforms"
+    affiliated_faction: null
+    
+  - name: "Hydra Systems"
+    type: "Multi-weapon platforms"
+    specialization: "Modular and adaptive weapons"
+    description: "Versatile multi-purpose weapon systems"
+    affiliated_faction: null
+    
+  - name: "Fluxline Armories"
+    type: "Energy flux weapons"
+    specialization: "Variable energy weapons"
+    description: "Adaptive energy output weapon systems"
+    affiliated_faction: null
+    
+  - name: "Urbanite Arms"
+    type: "Urban warfare"
+    specialization: "Close-quarters combat systems"
+    description: "Weapons optimized for urban environments"
+    affiliated_faction: null
+    
+  - name: "Ridgepoint Tactical"
+    type: "Tactical firearms"
+    specialization: "Professional tactical weapons"
+    description: "High-quality tactical weapon systems"
+    affiliated_faction: null
+    
+  - name: "Maelstrom Engineering"
+    type: "Heavy ordnance"
+    specialization: "Explosive and heavy weapons"
+    description: "Powerful explosive weapon systems"
+    affiliated_faction: null
+    
+  - name: "Manifold Dynamics"
+    type: "Advanced technology"
+    specialization: "Multi-dimensional weapons"
+    description: "Exotic and advanced weapon technology"
+    affiliated_faction: null
+
+# Faction alignment axes
+axes:
+  order:
+    description: "Control vs Chaos"
+    low_values: ["Rust Communion", "Radial Swarm", "Proxy Choir", "Nexus Archives"]
+    high_values: ["Pillar Ascendancy", "Null Sanctum", "Night Censors", "HelioCrypt Overmind"]
+    
+  purity:
+    description: "Flesh vs Machine"
+    low_values: ["Rust Communion", "Chimera Protocol", "HelioCrypt Overmind", "Proxy Choir", "Black Vein Syndicate"]
+    high_values: ["Null Sanctum", "Glass Harbor Collective"]
+    
+  faith:
+    description: "Religion vs Rationalism"
+    low_values: ["Nexus Archives", "Harvest Guild", "HelioCrypt Overmind"]
+    high_values: ["Proxy Choir", "Null Sanctum", "Rust Communion", "Night Censors"]
+    
+  autonomy:
+    description: "Collective vs Centralized"
+    low_values: ["HelioCrypt Overmind", "Pillar Ascendancy", "Proxy Choir", "Night Censors"]
+    high_values: ["Undercurrent Union", "Radial Swarm"]
+    
+  morality:
+    description: "Ethics vs Amorality"
+    low_values: ["Black Vein Syndicate", "Chimera Protocol", "Night Censors"]
+    high_values: ["Glass Harbor Collective", "Undercurrent Union"]
+
+# Summary statistics
+statistics:
+  total_factions: 13
+  total_generic_manufacturers: 23
+  factions_producing_weapons: 13
+  weapon_producing_entities: 36
