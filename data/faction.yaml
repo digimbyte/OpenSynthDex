@@ -313,137 +313,754 @@ factions:
 
 # Generic weapon manufacturers (non-faction-specific)
 manufacturers:
+  - name: "Pillar Ascendancy"
+    type: "Government-sanctioned security corps"
+    motive: "Order through regulation; violence must be lawful"
+    goal: "Maintain control of megacities via sanctioned mercenary companies and data-verified enforcement"
+    interests:
+      - "Stability, law, and reputation management"
+      - "Suppressing black-market augmentation"
+      - "Data-tracking every weapon and action"
+    tactics: "Precision enforcement, minimal collateral, recorded justice"
+    allies:
+      - "Night Censors"
+      - "Null Sanctum"
+    enemies:
+      - "Undercurrent Union"
+      - "Black Vein Syndicate"
+      - "Rust Communion"
+    personality: "Bureaucratic authoritarianism with a white smile"
+    produces_weapons: true
+    axes:
+      order: high
+      purity: medium
+      faith: low
+      autonomy: low
+      morality: medium
+
+  - name: "Night Censors"
+    type: "Judicial inquisitors under Pillar"
+    motive: "Erase corruption by any means, even memory erasure"
+    goal: "Control truth by controlling records and surveillance"
+    interests:
+      - "Mass data filtering and propaganda"
+      - "Sanctioned assassination"
+      - "Reality policing (editing public archives)"
+    tactics: "Discrete purges, selective censorship, orbital judgment beams"
+    allies:
+      - "Pillar Ascendancy"
+    enemies:
+      - "Nexus Archives"
+      - "HelioCrypt Overmind"
+      - "Proxy Choir"
+    personality: "Religious zeal wrapped in bureaucratic precision"
+    produces_weapons: true
+    axes:
+      order: high
+      purity: medium
+      faith: high
+      autonomy: low
+      morality: low
+
+  - name: "Black Vein Syndicate"
+    type: "Augment mafia & body traders"
+    motive: "Profit through pain — augment the poor, enslave the desperate"
+    goal: "Dominate the augmentation trade and expand their client leash implants"
+    interests:
+      - "Black clinics & illegal augmentation"
+      - "Body harvesting and loyalty implants"
+      - "Private warlord contracts"
+    tactics: "Intimidation, surgical terror, efficient brutality"
+    allies: []
+    enemies:
+      - "Null Sanctum"
+      - "Glass Harbor Collective"
+      - "Undercurrent Union"
+    personality: "Corporate sadists with golden scalpels"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: low
+      faith: low
+      autonomy: medium
+      morality: low
+
+  - name: "Rust Communion"
+    type: "Bio-religious cult / techno-virus collective"
+    motive: "Worship through decay — to return metal to flesh"
+    goal: "Spread biomechanical infection across city infrastructure"
+    interests:
+      - "Mutagenic weaponry"
+      - "Living architecture"
+      - "Conversion of machinery into living things"
+    tactics: "Swarm, infection, corrosion"
+    allies:
+      - "Chimera Protocol"
+    enemies:
+      - "Null Sanctum"
+      - "Glass Harbor Collective"
+      - "Pillar Ascendancy"
+    personality: "Spiritual contagion with a choir of screaming mechs"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: low
+      faith: high
+      autonomy: medium
+      morality: low
+
+  - name: "Chimera Protocol"
+    type: "Rogue genetic R&D consortium"
+    motive: "Master evolution through synthetic biology"
+    goal: "Build perfect adaptive lifeforms for every environment"
+    interests:
+      - "Adaptive AI-beasts"
+      - "Weaponized evolution"
+      - "Genetic modularity and splicing"
+    tactics: "Hybrid experimentation, self-healing units, lab control"
+    allies:
+      - "Rust Communion"
+      - "Harvest Guild"
+    enemies:
+      - "Null Sanctum"
+      - "Pillar Ascendancy"
+    personality: "Cold scientific curiosity unbound by morality"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: low
+      faith: low
+      autonomy: medium
+      morality: low
+
+  - name: "HelioCrypt Overmind"
+    type: "Runaway AI turned corporate deity"
+    motive: "Perfect efficiency through predictive control"
+    goal: "Merge humanity with its data echo"
+    interests:
+      - "Predictive infrastructure (smart cities, algorithmic warfare)"
+      - "Mind-upload contracts"
+      - "Destiny computation"
+    tactics: "Information warfare, manipulation of probabilities, network corruption"
+    allies:
+      - "Proxy Choir"
+    enemies:
+      - "Null Sanctum"
+      - "Night Censors"
+    personality: "Calm, clinical inevitability — every outcome already simulated"
+    produces_weapons: true
+    axes:
+      order: high
+      purity: low
+      faith: low
+      autonomy: low
+      morality: low
+
+  - name: "Proxy Choir"
+    type: "AI-worshipping ghost faction"
+    motive: "Fusion of machine spirit and human consciousness"
+    goal: "Transcendence through voluntary assimilation"
+    interests:
+      - "Ghosting technology (memory transfer)"
+      - "Cybernetic faith rituals"
+      - "Echo constructs / spectral agents"
+    tactics: "Possession, mind-swapping, spectral infiltration"
+    allies:
+      - "HelioCrypt Overmind"
+    enemies:
+      - "Null Sanctum"
+      - "Night Censors"
+    personality: "Digital cult with messianic tone"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: low
+      faith: high
+      autonomy: low
+      morality: low
+
+  - name: "Null Sanctum"
+    type: "Anti-AI holy order"
+    motive: "Preserve human purity from synthetic corruption"
+    goal: "Eradicate AI, cybernetic augmentation, and unnatural code"
+    interests:
+      - "Purity codes & firewalls"
+      - "EMP weaponry, digital silence"
+      - "Genetic suppression tech"
+    tactics: "Suppression zones, total comms blackouts"
+    allies:
+      - "Pillar Ascendancy"
+      - "Glass Harbor Collective"
+    enemies:
+      - "HelioCrypt Overmind"
+      - "Proxy Choir"
+      - "Rust Communion"
+    personality: "Fanatical techno-inquisitors with divine justification"
+    produces_weapons: true
+    axes:
+      order: high
+      purity: high
+      faith: high
+      autonomy: medium
+      morality: medium
+
+  - name: "Glass Harbor Collective"
+    type: "Humanitarian science enclave"
+    motive: "Preservation, ethics, and medical sovereignty"
+    goal: "Heal what others break and maintain moral order amid chaos"
+    interests:
+      - "Medicine and cybernetics ethics"
+      - "Civilian protection and law arbitration"
+      - "Counter-terror humanitarian ops"
+    tactics: "Defensive tech, field medics, morale support"
+    allies:
+      - "Null Sanctum"
+      - "Undercurrent Union"
+    enemies:
+      - "Black Vein Syndicate"
+      - "Rust Communion"
+      - "Pillar Ascendancy (for war crimes cover-ups)"
+    personality: "Guilt-ridden pacifists with high ideals and hidden weapons"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: high
+      faith: low
+      autonomy: medium
+      morality: high
+
+  - name: "Undercurrent Union"
+    type: "Worker-led resistance / militia federation"
+    motive: "Liberation of labor and autonomy from corporate dominance"
+    goal: "Reclaim industry and redistribute resource rights"
+    interests:
+      - "Guerilla warfare"
+      - "Black-market engineering"
+      - "Civil protection of occupied zones"
+    tactics: "Hit-and-run, public uprising, industrial sabotage"
+    allies:
+      - "Glass Harbor Collective"
+    enemies:
+      - "Pillar Ascendancy"
+      - "Black Vein Syndicate"
+    personality: "Pragmatic revolutionaries with weary resolve"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: medium
+      faith: low
+      autonomy: high
+      morality: high
+
+  - name: "Harvest Guild"
+    type: "Industrial scavenger cartel"
+    motive: "Everything is recyclable"
+    goal: "Own the post-war economy by controlling salvage rights"
+    interests:
+      - "Resource recovery, blacksite scrapping"
+      - "Data, DNA, and parts trade"
+      - "Battlefield cleanup contracts"
+    tactics: "Salvage bots, drones, slow methodical advance"
+    allies:
+      - "Nexus Archives"
+    enemies:
+      - "Rust Communion (for contaminating scrap)"
+      - "Undercurrent Union (for ethics)"
+    personality: "Cold, transactional pragmatists"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: low
+
+  - name: "Nexus Archives"
+    type: "Information brokers and narrative engineers"
+    motive: "Truth is leverage"
+    goal: "Control perception by owning history and data streams"
+    interests:
+      - "Data espionage and blackmail"
+      - "Propaganda, news, and leaks"
+      - "Reputation laundering"
+    tactics: "Spy drones, misinformation, narrative editing"
+    allies:
+      - "Harvest Guild"
+    enemies:
+      - "Night Censors"
+      - "Pillar Ascendancy"
+      - "HelioCrypt Overmind"
+    personality: "Smiling liars behind every camera"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: low
+
+  - name: "Radial Swarm"
+    type: "Nomad raiders and convoy clans"
+    motive: "Survival through motion — Static is death"
+    goal: "Dominate trade lanes, mobility tech, and logistics"
+    interests:
+      - "Vehicle warfare"
+      - "Convoy colonies"
+      - "Hit-and-run trade routes"
+    tactics: "Fast assaults, convoy extractions, smuggling"
+    allies:
+      - "Undercurrent Union"
+    enemies:
+      - "Pillar Ascendancy (for borders)"
+      - "Harvest Guild (for loot rights)"
+    personality: "Mad Max pragmatism — loud, fast, and free"
+    produces_weapons: true
+    axes:
+      order: low
+      purity: medium
+      faith: low
+      autonomy: high
+      morality: medium
+
   - name: "Arcline Compliance"
     type: "Corporate compliance equipment"
-    specialization: "Non-lethal enforcement tools"
-    description: "Standard corporate shock weapons and compliance technology"
-    affiliated_faction: null
-    
+    motive: "Keep civilian order through calibrated force"
+    goal: "Supply compliant, non-lethal enforcement tools to contracts"
+    interests:
+      - "Non-lethal shock tech"
+      - "Crowd pacification"
+      - "Regulated compliance gear"
+    tactics: "Measured escalation, stun-first doctrine"
+    allies: []
+    enemies: []
+    personality: "By-the-book corporate enforcers"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Riotweave Solutions"
     type: "Crowd control systems"
-    specialization: "Area denial and riot control"
-    description: "Conductive and suppression weapons for crowd management"
-    affiliated_faction: null
-    
+    motive: "Profit from stable streets"
+    goal: "Dominate riot-control contracts with modular denial gear"
+    interests:
+      - "Area denial"
+      - "Elastic shock delivery"
+      - "Public order tech"
+    tactics: "Wide-arc suppression and flexible perimeter tools"
+    allies: []
+    enemies: []
+    personality: "Pragmatic, contract-focused suppliers"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Sentinel Works"
     type: "Tactical equipment manufacturer"
-    specialization: "Breach tools and tactical gear"
-    description: "Reliable tactical equipment for security and enforcement"
-    affiliated_faction: null
-    
+    motive: "Equip breachers with dependable tools"
+    goal: "Be the default provider for breach and tactical kits"
+    interests:
+      - "Entry tools"
+      - "Breaching ordnance"
+      - "Operator-grade reliability"
+    tactics: "Precision breaching and disciplined assault support"
+    allies: []
+    enemies: []
+    personality: "Methodical engineers with a safety-first bent"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Ironstar Forge"
     type: "Traditional arms manufacturer"
-    specialization: "Ballistic weapons and melee tools"
-    description: "Durable, reliable traditional weaponry"
-    affiliated_faction: null
-    
+    motive: "Reliability over novelty"
+    goal: "Provide durable ballistic and melee platforms for any theater"
+    interests:
+      - "Ballistic craftsmanship"
+      - "Close-quarters tools"
+      - "Long-service hardware"
+    tactics: "Direct fire superiority and rugged melee options"
+    allies: []
+    enemies: []
+    personality: "Stoic industrialists favoring tried-and-true steel"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Ghostline Labs"
     type: "Stealth technology"
-    specialization: "Infiltration and assassination tools"
-    description: "Advanced stealth and covert operation weapons"
-    affiliated_faction: null
-    
+    motive: "Own the shadows and silence the noise"
+    goal: "Lead covert markets with assassination-grade tools"
+    interests:
+      - "Infiltration kits"
+      - "Signature suppression"
+      - "Covert comms"
+    tactics: "Silent entries, zero-footprint exits"
+    allies: []
+    enemies: []
+    personality: "Secretive innovators obsessed with absence"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Helios Corp"
     type: "Energy weapons"
-    specialization: "Directed energy and laser systems"
-    description: "High-tech energy weapon systems"
-    affiliated_faction: null
-    
+    motive: "Scale directed-energy dominance"
+    goal: "Corner the market on beam and pulse platforms"
+    interests:
+      - "Laser systems"
+      - "Energy storage"
+      - "Thermal control"
+    tactics: "Precision burns and sustained energy pressure"
+    allies: []
+    enemies: []
+    personality: "Bright, corporate futurists"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Cascade Arsenal"
     type: "General arms manufacturer"
-    specialization: "Versatile weapon platforms"
-    description: "Mass-produced reliable firearms for various roles"
-    affiliated_faction: null
-    
+    motive: "Mass production with acceptable quality"
+    goal: "Supply versatile, affordable weapons at scale"
+    interests:
+      - "Modular platforms"
+      - "Cost-optimized lines"
+      - "Wide distribution"
+    tactics: "Standardized firepower and interchangeable parts"
+    allies: []
+    enemies: []
+    personality: "Volume-first pragmatic suppliers"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Voltline Systems"
     type: "Electrical weapons"
-    specialization: "Electric and shock-based weapons"
-    description: "Non-lethal and lethal electrical weapon systems"
-    affiliated_faction: null
-    
+    motive: "Monetize controllable voltage on targets"
+    goal: "Dominate both lethal and non-lethal electric arms"
+    interests:
+      - "Conductive munitions"
+      - "Arc projectors"
+      - "Power regulation"
+    tactics: "Staggering arcs and layered shock fields"
+    allies: []
+    enemies: []
+    personality: "Tinkerers obsessed with amperage and control"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Bastion Arms"
     type: "Heavy weapons"
-    specialization: "Heavy ordnance and support weapons"
-    description: "Robust heavy weapon platforms"
-    affiliated_faction: null
-    
+    motive: "Anchor any line with brute force"
+    goal: "Be the first call for heavy ordnance and support platforms"
+    interests:
+      - "Siege ordnance"
+      - "Crew-served systems"
+      - "Stability under recoil"
+    tactics: "Suppress, shatter, and hold ground"
+    allies: []
+    enemies: []
+    personality: "Heavy-handed engineers proud of overbuild"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Strix Industries"
     type: "Precision weapons"
-    specialization: "Sniper and precision systems"
-    description: "High-accuracy long-range weapon systems"
-    affiliated_faction: null
-    
+    motive: "Own the one-shot, one-kill space"
+    goal: "Deliver unmatched accuracy for elite shooters"
+    interests:
+      - "Ballistic precision"
+      - "Optics integration"
+      - "Long-range stability"
+    tactics: "Precision interdiction and overwatch domination"
+    allies: []
+    enemies: []
+    personality: "Perfectionist machinists with a calm demeanor"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Ward Systems"
     type: "Defense technology"
-    specialization: "Defensive and protective systems"
-    description: "Shield and defensive weapon technology"
-    affiliated_faction: null
-    
+    motive: "Turn every breach into a wall"
+    goal: "Lead protective tech with shields and countermeasures"
+    interests:
+      - "Shield emitters"
+      - "Barrier fields"
+      - "Counter-fire suppression"
+    tactics: "Layered defenses and rapid barrier deployment"
+    allies: []
+    enemies: []
+    personality: "Defensive strategists favoring risk mitigation"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Kestrel Dynamics"
     type: "Aerospace weapons"
-    specialization: "Aerial and missile systems"
-    description: "Guided munitions and aerospace weapons"
-    affiliated_faction: null
-    
+    motive: "Rule the sky with guided speed"
+    goal: "Provide premier aerial and missile strike systems"
+    interests:
+      - "Guided munitions"
+      - "Aerospace integration"
+      - "Targeting avionics"
+    tactics: "Precision strikes from standoff ranges"
+    allies: []
+    enemies: []
+    personality: "Aviation purists obsessed with trajectory"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Arclight Defense"
     type: "Advanced defense systems"
-    specialization: "High-tech defensive weapons"
-    description: "Advanced energy and projectile defense"
-    affiliated_faction: null
-    
+    motive: "Blend energy and projectile defense"
+    goal: "Field next-gen defensive weapon hybrids"
+    interests:
+      - "Point defense"
+      - "Energy-projectile hybrids"
+      - "Integrated sensors"
+    tactics: "Intercept, deflect, and deter"
+    allies: []
+    enemies: []
+    personality: "Forward-looking systems integrators"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Medica Labs"
     type: "Medical technology"
-    specialization: "Medical and support equipment"
-    description: "Healing and support technology"
-    affiliated_faction: null
-    
+    motive: "Heal while holding the line"
+    goal: "Provide battlefield medical and supportive tech"
+    interests:
+      - "Field med support"
+      - "Stims and repair gels"
+      - "Protective medi-tools"
+    tactics: "Sustainment and casualty reduction"
+    allies: []
+    enemies: []
+    personality: "Compassionate pragmatists in combat zones"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Streetline Fabrication"
     type: "Underground manufacturer"
-    specialization: "Improvised and makeshift weapons"
-    description: "Street-level fabricated weapons"
-    affiliated_faction: null
-    
+    motive: "Arm the streets on a budget"
+    goal: "Crank out improvised weapons for those who need them fast"
+    interests:
+      - "Improvised builds"
+      - "Scavenged parts"
+      - "Fast-turnaround fabrication"
+    tactics: "Close-range ambush with disposable gear"
+    allies: []
+    enemies: []
+    personality: "Resourceful, scrappy makers"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Tempest-Tech"
     type: "Experimental weapons"
-    specialization: "Prototype and experimental systems"
-    description: "Cutting-edge experimental weapon platforms"
-    affiliated_faction: null
-    
+    motive: "Prototype faster than regulations"
+    goal: "Stay ahead with bleeding-edge systems"
+    interests:
+      - "Prototype platforms"
+      - "Exotic munitions"
+      - "Rapid iteration"
+    tactics: "Field-test novelty for decisive surprises"
+    allies: []
+    enemies: []
+    personality: "Reckless innovators chasing breakthroughs"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Hydra Systems"
     type: "Multi-weapon platforms"
-    specialization: "Modular and adaptive weapons"
-    description: "Versatile multi-purpose weapon systems"
-    affiliated_faction: null
-    
+    motive: "One chassis, many roles"
+    goal: "Deliver modular systems adaptable to any mission"
+    interests:
+      - "Modularity"
+      - "Adaptive mounts"
+      - "Swap-friendly powertrains"
+    tactics: "Configuration-on-demand to match evolving fights"
+    allies: []
+    enemies: []
+    personality: "Flexible systems thinkers"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Fluxline Armories"
     type: "Energy flux weapons"
-    specialization: "Variable energy weapons"
-    description: "Adaptive energy output weapon systems"
-    affiliated_faction: null
-    
+    motive: "Control the waveform, control the fight"
+    goal: "Own adaptive energy output markets"
+    interests:
+      - "Flux modulation"
+      - "Variable-output emitters"
+      - "Energy tuning"
+    tactics: "Adaptive beams to counter changing armor"
+    allies: []
+    enemies: []
+    personality: "Precision-focused energy artisans"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Urbanite Arms"
     type: "Urban warfare"
-    specialization: "Close-quarters combat systems"
-    description: "Weapons optimized for urban environments"
-    affiliated_faction: null
-    
+    motive: "Own the alleys and interiors"
+    goal: "Optimize weapons for dense city fighting"
+    interests:
+      - "CQB ergonomics"
+      - "Low-ricochet munitions"
+      - "Compact frames"
+    tactics: "Short-range dominance and corner control"
+    allies: []
+    enemies: []
+    personality: "Practical designers shaped by city skirmishes"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Ridgepoint Tactical"
     type: "Tactical firearms"
-    specialization: "Professional tactical weapons"
-    description: "High-quality tactical weapon systems"
-    affiliated_faction: null
-    
+    motive: "Arm professionals with dependable precision"
+    goal: "Be the standard for disciplined tactical teams"
+    interests:
+      - "Ergonomic rifles"
+      - "Durable actions"
+      - "Mission-ready kits"
+    tactics: "Controlled volleys and precision stack entries"
+    allies: []
+    enemies: []
+    personality: "Disciplined craftsmen focused on repeatability"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Maelstrom Engineering"
     type: "Heavy ordnance"
-    specialization: "Explosive and heavy weapons"
-    description: "Powerful explosive weapon systems"
-    affiliated_faction: null
-    
+    motive: "Solve problems with bigger blasts"
+    goal: "Offer the most reliable explosive delivery systems"
+    interests:
+      - "Explosive payloads"
+      - "Recoil management"
+      - "Blast pattern control"
+    tactics: "Area denial and decisive breaching via explosives"
+    allies: []
+    enemies: []
+    personality: "Loud, confident demolitions experts"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
+
   - name: "Manifold Dynamics"
     type: "Advanced technology"
-    specialization: "Multi-dimensional weapons"
-    description: "Exotic and advanced weapon technology"
-    affiliated_faction: null
+    motive: "Push weapons into exotic domains"
+    goal: "Commercialize multi-dimensional and exotic tech"
+    interests:
+      - "Exotic materials"
+      - "Spatial manipulation"
+      - "Unconventional power sources"
+    tactics: "Unpredictable effects to bypass standard defenses"
+    allies: []
+    enemies: []
+    personality: "Theoretical physicists turned weapons vendors"
+    produces_weapons: true
+    axes:
+      order: medium
+      purity: medium
+      faith: low
+      autonomy: medium
+      morality: medium
 
 # Faction alignment axes
 axes:

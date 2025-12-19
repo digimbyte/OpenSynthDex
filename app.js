@@ -7,6 +7,12 @@ let currentFilters = {
     sortBy: 'id'
 };
 
+// Loaded from data/faction.yaml
+let factionInfo = {};
+let manufacturerInfo = {};
+let factionNames = [];
+let allManufacturers = [];
+
 // Image cache to track which variants exist
 const imageCache = {};
 
@@ -40,14 +46,21 @@ const imageLoadQueue = [];
 // Initialize the app
 async function init() {
     try {
-        // Load both weapon JSON files
-        const [genericResponse, factionResponse] = await Promise.all([
+        await loadYamlParser();
+
+        // Load weapons plus faction/manufacturer metadata
+        const [genericResponse, factionResponse, factionYamlResponse] = await Promise.all([
             fetch('data/weapons_generic.json'),
-            fetch('data/weapons_faction.json')
+            fetch('data/weapons_faction.json'),
+            fetch('data/faction.yaml')
         ]);
         
         const genericData = await genericResponse.json();
         const factionData = await factionResponse.json();
+        const factionYaml = await factionYamlResponse.text();
+
+        const factionMeta = window.jsyaml.load(factionYaml);
+        hydrateFactionMetadata(factionMeta);
         
         // Merge both weapon arrays
         weaponsData = [...genericData.weapons, ...factionData.weapons];
@@ -56,6 +69,7 @@ async function init() {
         updateStats();
         initializeCards();
         await updateManufacturerBanner(currentFilters.manufacturer);
+        updateFactionInfoLink();
         renderWeapons();
         setupEventListeners();
     } catch (error) {
@@ -65,22 +79,49 @@ async function init() {
     }
 }
 
+// Lazy-load YAML parser (js-yaml)
+async function loadYamlParser() {
+    if (window.jsyaml) return;
+    await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js';
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error('Failed to load YAML parser'));
+        document.head.appendChild(script);
+    });
+}
+
+// Normalize faction/manufacturer metadata loaded from JSON
+function hydrateFactionMetadata(factionMeta) {
+    const factions = factionMeta?.factions || [];
+    const manufacturers = factionMeta?.manufacturers || [];
+
+    factionNames = factions.map(f => f.name);
+    factionInfo = factions.reduce((acc, f) => {
+        acc[f.name] = f;
+        return acc;
+    }, {});
+
+    manufacturerInfo = manufacturers.reduce((acc, m) => {
+        acc[m.name] = m;
+        return acc;
+    }, {});
+
+    // Keep a deduped list of every manufacturer name we know about
+    allManufacturers = Array.from(new Set([
+        ...manufacturers.map(m => m.name),
+        ...factionNames
+    ])).sort();
+}
+
 // Populate filter dropdowns
 function populateFilters() {
     const manufacturers = [...new Set(weaponsData.map(w => w.manufacturer))].sort();
     const categories = [...new Set(weaponsData.map(w => w.category))].sort();
     
-    // Define faction manufacturers
-    const factionManufacturers = [
-        'Black Vein Syndicate', 'Chimera Protocol', 'Glass Harbor Collective',
-        'Harvest Guild', 'HelioCrypt Overmind', 'Nexus Archives',
-        'Night Censors', 'Null Sanctum', 'Pillar Ascendancy',
-        'Proxy Choir', 'Radial Swarm', 'Rust Communion', 'Undercurrent Union'
-    ];
-    
-    // Separate generic and faction manufacturers
-    const genericMfrs = manufacturers.filter(m => !factionManufacturers.includes(m));
-    const factionMfrs = manufacturers.filter(m => factionManufacturers.includes(m));
+    // Separate generic and faction manufacturers using loaded metadata
+    const genericMfrs = manufacturers.filter(m => !factionNames.includes(m));
+    const factionMfrs = manufacturers.filter(m => factionNames.includes(m));
     
     const manufacturerFilter = document.getElementById('manufacturerFilter');
     
@@ -122,6 +163,7 @@ function setupEventListeners() {
     document.getElementById('manufacturerFilter').addEventListener('change', async (e) => {
         currentFilters.manufacturer = e.target.value;
         await updateManufacturerBanner(e.target.value);
+        updateFactionInfoLink();
         renderWeapons();
     });
     
@@ -150,13 +192,132 @@ function setupEventListeners() {
         clearBtn.style.display = 'none';
         renderWeapons();
     });
-    
+    // Click info link to show manufacturer/faction info
+    const factionInfoLink = document.getElementById('factionInfoLink');
+    if (factionInfoLink) {
+        factionInfoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = currentFilters.manufacturer;
+            if (!name || name === 'all') return;
+            if (isFaction(name)) {
+                showFactionPopup(name);
+            } else {
+                showManufacturerInfo(name);
+            }
+        });
+    }
+
     // Close modal on overlay click
     document.getElementById('modalOverlay').addEventListener('click', (e) => {
         if (e.target.id === 'modalOverlay') {
             closeModal();
         }
     });
+}
+
+// Show/hide faction info link based on current manufacturer selection
+function updateFactionInfoLink() {
+    const factionInfoLink = document.getElementById('factionInfoLink');
+    if (!factionInfoLink) return;
+    const name = currentFilters.manufacturer;
+    // Show when a specific manufacturer is selected (hide only for All)
+    factionInfoLink.style.display = name && name !== 'all' ? 'inline' : 'none';
+}
+
+// Show generic manufacturer info for non-faction entries
+function showManufacturerInfo(name) {
+    const modal = document.getElementById('modalOverlay');
+    const modalBody = document.getElementById('modalBody');
+    if (!modal || !modalBody) return;
+
+    const info = manufacturerInfo[name] || factionInfo[name];
+    const hasInfo = Boolean(info);
+
+    modalBody.innerHTML = `
+        <div class="modal-header">
+            <h2 class="modal-weapon-name">${name}</h2>
+            <div class="modal-weapon-meta">
+                <div class="modal-meta-item"><strong>Type:</strong> ${info?.type || 'Manufacturer'}</div>
+            </div>
+        </div>
+        <div class="modal-section">
+            ${hasInfo ? `
+                ${info.motive ? `<p><strong>Motive:</strong> ${info.motive}</p>` : ''}
+                ${info.goal ? `<p><strong>Goal:</strong> ${info.goal}</p>` : ''}
+                ${info.personality ? `<p><strong>Personality:</strong> ${info.personality}</p>` : ''}
+                ${info.interests ? `<h4>Interests</h4><ul>${info.interests.map(i => `<li>${i}</li>`).join('')}</ul>` : ''}
+                ${info.tactics ? `<h4>Tactics</h4><p>${info.tactics}</p>` : ''}
+                ${info.axes ? `<h4>Axes</h4><div class="axes-pill-row">${Object.entries(info.axes).map(([k,v]) => `<span class="axis-pill">${k}: ${v}</span>`).join('')}</div>` : ''}
+                ${info.allies ? `<h4>Allies</h4><ul>${info.allies.map(a => `<li>${a}</li>`).join('')}</ul>` : ''}
+                ${info.enemies ? `<h4>Enemies</h4><ul>${info.enemies.map(e => `<li>${e}</li>`).join('')}</ul>` : ''}
+            ` : '<p>No faction dossier available for this manufacturer.</p>'}
+        </div>
+    `;
+
+    modal.style.display = 'flex';
+}
+
+// Check if a manufacturer name is a faction
+function isFaction(name) {
+    return Boolean(name && factionInfo[name]);
+}
+
+// Build and show faction popup
+function showFactionPopup(factionName) {
+    const info = factionInfo[factionName];
+    if (!info) return;
+
+    // Remove any existing popup
+    const existing = document.getElementById('factionPopupOverlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'factionPopupOverlay';
+    overlay.className = 'faction-popup-overlay';
+
+    const card = document.createElement('div');
+    card.className = 'faction-popup';
+    card.innerHTML = `
+        <div class="faction-popup-header">
+            <div>
+                <div class="faction-popup-name">${factionName}</div>
+                <div class="faction-popup-type">${info.type}</div>
+            </div>
+            <button class="faction-popup-close" aria-label="Close" onclick="this.closest('#factionPopupOverlay').remove()">✕</button>
+        </div>
+        <div class="faction-popup-body">
+            <p><strong>Motive:</strong> ${info.motive}</p>
+            <p><strong>Goal:</strong> ${info.goal}</p>
+            ${info.personality ? `<p><strong>Personality:</strong> ${info.personality}</p>` : ''}
+            <div class="faction-popup-grid">
+                <div>
+                    <h4>Interests</h4>
+                    <ul>${(info.interests || []).map(i => `<li>${i}</li>`).join('')}</ul>
+                </div>
+                <div>
+                    <h4>Tactics</h4>
+                    <p>${info.tactics}</p>
+                    <h4 style="margin-top:10px;">Axes</h4>
+                    <div class="axes-pill-row">
+                        ${Object.entries(info.axes || {}).map(([k,v]) => `<span class="axis-pill">${k}: ${v}</span>`).join('')}
+                    </div>
+                </div>
+                <div>
+                    <h4>Allies</h4>
+                    <ul>${(info.allies || []).map(a => `<li>${a}</li>`).join('')}</ul>
+                    <h4 style="margin-top:10px;">Enemies</h4>
+                    <ul>${(info.enemies || []).map(e => `<li>${e}</li>`).join('')}</ul>
+                </div>
+            </div>
+        </div>
+    `;
+
+    overlay.appendChild(card);
+    overlay.onclick = (e) => {
+        if (e.target === overlay) overlay.remove();
+    };
+
+    document.body.appendChild(overlay);
 }
 
 // Filter and sort weapons
