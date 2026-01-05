@@ -43,6 +43,9 @@ A project that presents itself as a community clone/continuation of OpenSynth, o
 **1.7 “Publish” / “Publication”**  
 To distribute, release, sell, share, upload, or otherwise make available to any third party (publicly or privately), including early access, closed betas, Patreon builds, and client deliveries.
 
+**1.8 “OpenSynth Foundation”**  
+The Licensor and/or the steward(s) designated by the Licensor to maintain and evolve OpenSynth and publish OCUL.
+
 ---
 
 ## 2. Grant of Rights (Very Broad)
@@ -131,14 +134,16 @@ OpenSynth may revise, refine, expand, or rework itself over time based on:
 
 This evolution is a core condition of this license.
 
-### 7.2 Adoption is Remix, Not 1:1 Copying
+### 7.2 Adoption is Remix, Not 1:1 Copying (Express Grant)
 
 By creating and publishing a work within the OpenSynth Universe, you acknowledge and agree that:
 
-- OpenSynth may adopt, reinterpret, or refine general concepts, improvements, structures, or enhancements that emerge from the community;
-- any such adoption is not a 1:1 replication of your work, and will take the form of OpenSynth’s own remix/derivative evolution;
-- adoption does not transfer ownership of your specific project, name, narrative execution, or expressive work;
-- OpenSynth will not republish or rebrand your full project as its own.
+- Creators retain ownership of their project name, their original contributions, and their specific expression (including storylines, characters, scenes, art, music, and code).
+- You grant the OpenSynth Foundation an express, worldwide, perpetual, royalty-free, non-exclusive right to adopt, remix, and evolve OpenSynth using ideas and improvements that emerge from OpenSynth-based works.
+- Any such adoption is not a 1:1 replication of your work and will be OpenSynth’s own remix/derivative evolution.
+- This does not transfer ownership of your specific project, project identity, or specific expression to the OpenSynth Foundation.
+- The OpenSynth Foundation will not republish or rebrand your full project as its own.
+
 
 This clause exists to prevent stagnation, veto power, or retroactive ownership claims.
 
