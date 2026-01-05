@@ -2,7 +2,7 @@
 Attribution Required • Commercial Use Allowed • Open Evolution • Name & Canon Protected  
 Version 1.5
 
-Copyright © [YEAR] [YOUR NAME / STUDIO] (“Licensor”)  
+Copyright © 2025 Digimbyte (“Licensor”)  
 Universe Name: OpenSynth
 
 ---
@@ -73,13 +73,10 @@ Use **one** of the following attribution lines somewhere reasonably visible (cre
 ### Option C — Creator credit (alias)
 > Set in the OpenSynth universe created by Digimbyte, used under the OpenSynth Community Universe License (OCUL).
 
-### Option D — Creator credit (studio / org)
-> Set in the OpenSynth universe created by [Studio/Org Name], used under the OpenSynth Community Universe License (OCUL).
+### Option D — Strong disclaimer (helpful for store pages)
+> Unofficial work set in the OpenSynth universe. Licensed under OCUL. Not endorsed by the OpenSynth Foundation.
 
-### Option E — Strong disclaimer (helpful for store pages)
-> Unofficial work set in the OpenSynth universe. Licensed under OCUL. Not endorsed by the OpenSynth creator(s).
-
-### Option F — Minimal but compliant (tight spaces)
+### Option E — Minimal but compliant (tight spaces)
 > OpenSynth universe • OCUL
 
 ---
@@ -244,7 +241,7 @@ You may base Your Work on any OpenSynth content revision you choose (old or new)
 
 ## 16. Governing Law
 
-This license is governed by the laws of [STATE / COUNTRY].
+This license is governed by the laws of QLD Australia.
 
 ---
 
