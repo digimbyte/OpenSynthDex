@@ -49,9 +49,27 @@ If you publish anything based on OpenSynth, you are expected to comply with the 
 
 ## Attribution (Minimum)
 
-Use this somewhere visible (credits/README/store page/description):
+Use one of these attribution lines somewhere visible (credits/README/store page/description).  
+Pick the one that best fits your project.
 
-> Set in the OpenSynth universe created by [Creator/Studio], used under the OpenSynth Community Universe License (OCUL).
+### Option A — Short (recommended)
+> Set in the OpenSynth universe. Licensed under OCUL.
+
+### Option B — Standard
+> Set in the OpenSynth universe, used under the OpenSynth Community Universe License (OCUL).
+
+### Option C — Creator credit (alias)
+> Set in the OpenSynth universe created by Digimbyte, used under the OpenSynth Community Universe License (OCUL).
+
+### Option D — Creator credit (studio / org)
+> Set in the OpenSynth universe created by [Studio/Org Name], used under the OpenSynth Community Universe License (OCUL).
+
+### Option E — Strong disclaimer (helpful for store pages)
+> Unofficial work set in the OpenSynth universe. Licensed under OCUL. Not endorsed by the OpenSynth creator(s).
+
+### Option F — Minimal but compliant (tight spaces)
+> OpenSynth universe • OCUL
+
 
 ---
 
