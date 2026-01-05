@@ -33,8 +33,8 @@ Attribution is required.
 No. Your project can be open or closed, free or paid, permissive or proprietary. OCUL does not impose share-alike on ordinary derived works.
 
 ## What credit do I need to give?
-Minimum:
-“Set in the OpenSynth universe created by [Creator/Studio], used under the OpenSynth Community Universe License (OCUL).”
+Example:
+“Set in the OpenSynth universe created by Digimbyte, used under the OpenSynth Community Universe License (OCUL).”
 Put it somewhere visible (credits/description/README).
 
 ## Can I call my game “OpenSynth” or “OpenSynth 2”?
@@ -62,8 +62,10 @@ Any adoption will be OpenSynth’s own remix/derivative evolution, not a re-rele
 
 Creators still own:
 - their project name,
-- their unique execution,
-- and their original expressive content.
+- their original contributions and specific expression (storylines, characters, scenes, art, music, code),
+- and the unique identity of their project.
+
+By publishing within OpenSynth, creators also grant the OpenSynth Foundation an express, non-exclusive right to adopt, remix, and evolve OpenSynth using ideas and improvements that emerge from derived works, without copying the work 1:1 and without taking ownership of the creator’s project or specific expression.
 
 ## Do I get veto power over OpenSynth if I build something big?
 No. The “pay it forward” premise is that OpenSynth can learn from its ecosystem without being frozen by downstream claims.
