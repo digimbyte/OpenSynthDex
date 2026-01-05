@@ -56,16 +56,15 @@ Yes. OpenSynth is allowed to evolve—this is part of the agreement.
 OpenSynth can revise lore, terminology, structures, and concepts as the setting matures, and significant changes will be documented as revisions where practical.
 
 ## Can OpenSynth adopt ideas from derived works?
-Yes, and this is intentional.
-OpenSynth may adopt improvements and enhancements that emerge from community works, but adoption is never a 1:1 copy.
-Any adoption will be OpenSynth’s own remix/derivative evolution, not a re-release of someone else’s project.
+Yes, this is intentional.
+OpenSynth may adopt improvements and enhancements that emerge from OpenSynth-based works, but adoption is never a 1:1 re-release of someone else’s project. Any adoption will be OpenSynth’s own remix/derivative evolution.
 
 Creators still own:
 - their project name,
 - their original contributions and specific expression (storylines, characters, scenes, art, music, code),
 - and the unique identity of their project.
 
-By publishing within OpenSynth, creators also grant the OpenSynth Foundation an express, non-exclusive right to adopt, remix, and evolve OpenSynth using ideas and improvements that emerge from derived works, without copying the work 1:1 and without taking ownership of the creator’s project or specific expression.
+By publishing within OpenSynth, creators also grant the OpenSynth Foundation an express, perpetual, worldwide, royalty-free, non-exclusive right to adopt, remix, and evolve OpenSynth using ideas and improvements that emerge from OpenSynth-based works, without reproducing the creator’s specific expression 1:1 and without taking ownership of the creator’s project or specific expression.
 
 ## Do I get veto power over OpenSynth if I build something big?
 No. The “pay it forward” premise is that OpenSynth can learn from its ecosystem without being frozen by downstream claims.
