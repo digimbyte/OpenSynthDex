@@ -62,12 +62,25 @@ No permission is required. No royalties are owed.
 
 Any public release of Your Work must include attribution.
 
-Minimum attribution:
+Use **one** of the following attribution lines somewhere reasonably visible (credits/README/store page/description, or equivalent). Pick the one that best fits your medium:
 
-“Set in the OpenSynth universe created by [YOUR NAME / STUDIO].  
-Used under the OpenSynth Community Universe License (OCUL).”
+### Option A — Short (recommended)
+> Set in the OpenSynth universe. Licensed under OCUL.
 
-Attribution must be reasonably visible.
+### Option B — Standard
+> Set in the OpenSynth universe, used under the OpenSynth Community Universe License (OCUL).
+
+### Option C — Creator credit (alias)
+> Set in the OpenSynth universe created by Digimbyte, used under the OpenSynth Community Universe License (OCUL).
+
+### Option D — Creator credit (studio / org)
+> Set in the OpenSynth universe created by [Studio/Org Name], used under the OpenSynth Community Universe License (OCUL).
+
+### Option E — Strong disclaimer (helpful for store pages)
+> Unofficial work set in the OpenSynth universe. Licensed under OCUL. Not endorsed by the OpenSynth creator(s).
+
+### Option F — Minimal but compliant (tight spaces)
+> OpenSynth universe • OCUL
 
 ---
 
