@@ -1,4 +1,4 @@
-# OpenSynth – Community FAQ (Updated)
+# OpenSynth – Community FAQ
 
 ## What is OpenSynth?
 OpenSynth is an open cyberpunk dystopian universe designed for anyone to build or create in—commercially or non-commercially—with minimal restriction and maximum creative freedom.
