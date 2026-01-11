@@ -1,0 +1,250 @@
+top_tier_gangs:
+  - id: obsidian_accord
+    scope: global
+    origin: post_corporate_fragmentation
+    structure:
+      model: syndicate_families
+      leadership: opaque_council
+      succession: ritualized
+    operations:
+      domains: [logistics, labor_control, arbitration]
+      footprint: multi-continent
+    civilian_relation:
+      public_visibility: mythic
+      interaction_mode: indirect
+    economy:
+      revenue_streams: [shipping_tithes, contract_enforcement, labor_brokering]
+    ideology:
+      core_belief: order_over_freedom
+      taboo: public_disorder
+    stability:
+      cohesion: rigid
+      collapse_risk: extremely_low
+    gameplay_hooks:
+      player_contact: rare
+      consequences: world_scale_shifts
+
+  - id: jade_circuit
+    scope: global
+    origin: diasporic_clan_network
+    structure:
+      model: bloodline_cells
+      leadership: hereditary
+      succession: bloodright
+    operations:
+      domains: [finance, identity_control, influence_trading]
+      footprint: megacities_only
+    civilian_relation:
+      public_visibility: invisible
+      interaction_mode: contractual
+    economy:
+      revenue_streams: [credit_manipulation, identity_forging]
+    ideology:
+      core_belief: lineage_is_power
+      taboo: outsider_leadership
+    stability:
+      cohesion: high
+      collapse_risk: low
+    gameplay_hooks:
+      player_contact: mediated
+      consequences: economic_realignment
+
+  - id: iron_vow
+    scope: global
+    origin: paramilitary_collapse
+    structure:
+      model: command_order
+      leadership: singular_chair
+      succession: combat_challenge
+    operations:
+      domains: [security, suppression, territory_cleaning]
+      footprint: conflict_zones
+    civilian_relation:
+      public_visibility: feared
+      interaction_mode: coercive
+    economy:
+      revenue_streams: [protection_compacts, regime_support]
+    ideology:
+      core_belief: strength_legitimizes_rule
+      taboo: negotiation
+    stability:
+      cohesion: ironclad
+      collapse_risk: conditional
+    gameplay_hooks:
+      player_contact: hostile_only
+      consequences: zone_lockdowns
+      
+mid_tier_gangs:
+  - id: neon_cartel
+    scope: regional
+    territory: [metro_core, transit_rings]
+    origin: nightlife_economy
+    structure:
+      model: franchise_cells
+      leadership: rotating_boss
+    operations:
+      domains: [entertainment_control, vice_regulation]
+    civilian_relation:
+      tolerated_by: locals
+      fear_level: medium
+    economy:
+      revenue_streams: [venue_tax, access_fees]
+    stability:
+      cohesion: functional
+    gameplay_hooks:
+      player_contact: common
+      consequences: district_access
+
+  - id: red_meter_union
+    scope: regional
+    territory: [infrastructure_layers]
+    origin: labor_strike_mutation
+    structure:
+      model: union_hierarchy
+      leadership: elected
+    operations:
+      domains: [utilities, maintenance, transit]
+    civilian_relation:
+      tolerated_by: workers
+      fear_level: low
+    economy:
+      revenue_streams: [service_tithes]
+    stability:
+      cohesion: high
+    gameplay_hooks:
+      player_contact: negotiation
+      consequences: service_disruption
+
+  - id: glass_serpents
+    scope: regional
+    territory: [corporate_residential]
+    origin: white_collar_exile
+    structure:
+      model: broker_ring
+      leadership: meritocratic
+    operations:
+      domains: [blackmail, data_pressure]
+    civilian_relation:
+      tolerated_by: elites
+      fear_level: low
+    economy:
+      revenue_streams: [leverage_sales]
+    stability:
+      cohesion: medium
+    gameplay_hooks:
+      player_contact: intrigue
+      consequences: reputation_damage
+
+  - id: slag_fathers
+    scope: regional
+    territory: [industrial_zones]
+    origin: factory_abandonment
+    structure:
+      model: patriarchal
+      leadership: elder_core
+    operations:
+      domains: [scrap_control, labor_mediation]
+    civilian_relation:
+      tolerated_by: locals
+      fear_level: medium
+    economy:
+      revenue_streams: [material_fees]
+    stability:
+      cohesion: stable
+    gameplay_hooks:
+      player_contact: transactional
+      consequences: resource_flow
+
+  - id: night_relay
+    scope: regional
+    territory: [data_corridors]
+    origin: courier_collective
+    structure:
+      model: relay_cells
+      leadership: anonymous
+    operations:
+      domains: [message_transport, signal_routing]
+    civilian_relation:
+      tolerated_by: everyone
+      fear_level: none
+    economy:
+      revenue_streams: [delivery_contracts]
+    stability:
+      cohesion: resilient
+    gameplay_hooks:
+      player_contact: utility
+      consequences: information_access
+      
+low_tier_gangs:
+  - id: gutter_kites
+    towns: [eastward, coilbay]
+    origin: youth_displacement
+    role: theft
+    stability: fragile
+
+  - id: rust_boys
+    towns: [slagmouth]
+    origin: industrial_collapse
+    role: extortion
+    stability: fragile
+
+  - id: pink_static
+    towns: [neon_row]
+    origin: subculture_fragment
+    role: intimidation
+    stability: volatile
+
+  - id: ash_saints
+    towns: [old_cinder]
+    origin: cultic_myth
+    role: protection
+    stability: unstable
+
+  - id: coinbreakers
+    towns: [ledgerfall]
+    origin: debt_traps
+    role: enforcement
+    stability: low
+
+  - id: wire_foxes
+    towns: [switchyard]
+    origin: courier_spinoff
+    role: smuggling
+    stability: medium
+
+  - id: bleedline
+    towns: [northscar]
+    origin: blood_feud
+    role: vendetta
+    stability: volatile
+
+  - id: street_lamplighters
+    towns: [lowflare]
+    origin: utility_failure
+    role: control
+    stability: fragile
+
+  - id: dust_choir
+    towns: [windreach]
+    origin: ideological_drift
+    role: agitation
+    stability: unstable
+
+  - id: iron_mouths
+    towns: [forge_end]
+    origin: labor_abuse
+    role: intimidation
+    stability: low
+
+  - id: back_alley_oracle
+    towns: [mirrorgate]
+    origin: rumor_economy
+    role: information
+    stability: medium
+
+  - id: spill_runners
+    towns: [dockspill]
+    origin: port_corruption
+    role: diversion
+    stability: fragile
+
