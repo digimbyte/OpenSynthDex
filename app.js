@@ -694,20 +694,34 @@ function initializeCards() {
 
 // Find all image variants for a weapon
 async function findImageVariants(weaponName) {
-    const variantSuffixes = ['', '_a', '_b', '_c', '_d', '_e'];
     const availableVariants = [];
     
-    for (const suffix of variantSuffixes) {
-        const variations = generateFilenameVariations(weaponName, suffix);
+    // Check default variant first
+    const defaultVariations = generateFilenameVariations(weaponName, '');
+    for (const filename of defaultVariations) {
+        const exists = await checkImageExists(filename);
+        if (exists) {
+            availableVariants.push({ variant: '', filename });
+            break;
+        }
+    }
+    
+    // Check variants _a to _f, but only if the previous one exists
+    let previousExists = true;
+    for (const suffix of ['_a', '_b', '_c', '_d', '_e', '_f']) {
+        if (!previousExists) break;
         
-        // Try each variation until we find one that exists
+        const variations = generateFilenameVariations(weaponName, suffix);
+        let found = false;
         for (const filename of variations) {
             const exists = await checkImageExists(filename);
             if (exists) {
                 availableVariants.push({ variant: suffix, filename });
-                break; // Found this variant, move to next suffix
+                found = true;
+                break;
             }
         }
+        previousExists = found;
     }
     
     return availableVariants;
